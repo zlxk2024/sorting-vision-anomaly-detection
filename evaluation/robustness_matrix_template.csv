@@ -1,0 +1,5 @@
+dimension,slice,event_type,gt_count,tp,fp,fn,recall,precision,false_alarms_per_hour,p95_latency_seconds,evidence_status,result,notes
+lighting,night,open_no_drop,,,,,,,,,充足/不足,待评估,
+parcel_type,black_bag,wrong_chute,,,,,,,,,充足/不足,待评估,
+motion,high_speed,chute_stall,,,,,,,,,充足/不足,待评估,
+occlusion,pole_occlusion,multi_parcel_drawer,,,,,,,,,充足/不足,待评估,

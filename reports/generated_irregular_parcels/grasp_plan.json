@@ -1,0 +1,175 @@
+{
+  "recommended_object_id": "pkg_0004",
+  "eligible_count": 12,
+  "vertical_clearance_mm": 20.0,
+  "candidates": [
+    {
+      "rank": 1,
+      "object_id": "pkg_0004",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 196.81560423131225,
+      "suction_score": 0.9646554751587778,
+      "grasp_camera_mm": [
+        94.136333697776,
+        -384.4523012658041,
+        920.8165645500699
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 2,
+      "object_id": "pkg_0002",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 145.07338636983977,
+      "suction_score": 0.9675093574769683,
+      "grasp_camera_mm": [
+        -227.5449555867843,
+        339.9202653837831,
+        970.8944031509562
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 3,
+      "object_id": "pkg_0003",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 112.06895417294741,
+      "suction_score": 0.9674675351213712,
+      "grasp_camera_mm": [
+        -638.4790811180851,
+        -80.28915791553234,
+        982.9971957593189
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 4,
+      "object_id": "pkg_0012",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 104.47882711427776,
+      "suction_score": 0.8760667454482355,
+      "grasp_camera_mm": [
+        275.6280872559076,
+        -85.86158374094401,
+        1024.0415964306392
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 5,
+      "object_id": "pkg_0009",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 90.05796285755882,
+      "suction_score": 0.9196620494091727,
+      "grasp_camera_mm": [
+        694.8174471151021,
+        293.6862681219307,
+        1059.1367535470656
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 6,
+      "object_id": "pkg_0006",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 82.3467117596183,
+      "suction_score": 0.9619478571411636,
+      "grasp_camera_mm": [
+        724.5146912131571,
+        -171.3912827991103,
+        1061.462418132185
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 7,
+      "object_id": "pkg_0008",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 75.07399031914683,
+      "suction_score": 0.9261333454334334,
+      "grasp_camera_mm": [
+        -659.8214416609835,
+        334.1656526938885,
+        1025.0131565326967
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 8,
+      "object_id": "pkg_0010",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 64.90743586808739,
+      "suction_score": 0.8964111033077232,
+      "grasp_camera_mm": [
+        -235.47952818231053,
+        -451.11672116494975,
+        1039.808176008605
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 9,
+      "object_id": "pkg_0001",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 60.46516030276159,
+      "suction_score": 0.9682577567437004,
+      "grasp_camera_mm": [
+        274.01506907908686,
+        343.4838300041979,
+        1074.0127554583153
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 10,
+      "object_id": "pkg_0007",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 46.21379827493919,
+      "suction_score": 0.958342328688428,
+      "grasp_camera_mm": [
+        -241.16125603037656,
+        -91.40940397706024,
+        1063.3202158311203
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 11,
+      "object_id": "pkg_0011",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 27.446683341572136,
+      "suction_score": 0.8825868644077484,
+      "grasp_camera_mm": [
+        467.6740091850353,
+        -342.0089956003457,
+        1104.6072121878603
+      ],
+      "action": "pick_then_rescan"
+    },
+    {
+      "rank": 12,
+      "object_id": "pkg_0005",
+      "eligible_now": true,
+      "blocked_by": [],
+      "surface_height_mm": 25.992847921332267,
+      "suction_score": 0.9626277550168434,
+      "grasp_camera_mm": [
+        82.87935953440507,
+        158.1188171106231,
+        1098.918434584545
+      ],
+      "action": "pick_then_rescan"
+    }
+  ]
+}

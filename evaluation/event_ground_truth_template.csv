@@ -1,0 +1,2 @@
+event_id,site_id,camera_id,video_id,event_type,start_seconds,end_seconds,parcel_track_ids,drawer_id,expected_chute_id,actual_chute_id,bag_id,severity,annotator_1,annotator_2,review_status,evidence_path,notes
+EVT-0001,SITE-01,CAM-01,VIDEO-001,open_no_drop,18.200,19.100,parcel_001,drawer_03,,,bag_02,high,annotator_a,annotator_b,confirmed,/path/to/evidence.mp4,示例行，正式使用前删除

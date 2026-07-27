@@ -1,0 +1,184 @@
+{
+  "svc_cont": {
+    "message": {
+      "status": "success",
+      "data": [
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0001",
+            "x": "119.62",
+            "y": "261.13",
+            "z": "1045.35",
+            "angle_z": "-7.70",
+            "angle_y": "-2.59",
+            "angle_x": "-178.24",
+            "object_length": "311.55",
+            "object_width": "193.03",
+            "object_height": "146.27",
+            "object_type": "2",
+            "score": "0.957"
+          }
+        },
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0002",
+            "x": "583.02",
+            "y": "-104.83",
+            "z": "1080.39",
+            "angle_z": "8.92",
+            "angle_y": "-2.98",
+            "angle_x": "-179.05",
+            "object_length": "526.52",
+            "object_width": "335.29",
+            "object_height": "127.04",
+            "object_type": "2",
+            "score": "0.955"
+          }
+        },
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0003",
+            "x": "-576.56",
+            "y": "-113.93",
+            "z": "1043.27",
+            "angle_z": "8.12",
+            "angle_y": "-2.97",
+            "angle_x": "-179.01",
+            "object_length": "524.06",
+            "object_width": "333.21",
+            "object_height": "107.10",
+            "object_type": "2",
+            "score": "0.954"
+          }
+        },
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0004",
+            "x": "403.14",
+            "y": "-112.16",
+            "z": "970.84",
+            "angle_z": "-12.04",
+            "angle_y": "-2.44",
+            "angle_x": "-178.05",
+            "object_length": "351.08",
+            "object_width": "232.57",
+            "object_height": "227.06",
+            "object_type": "2",
+            "score": "0.954"
+          }
+        },
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0005",
+            "x": "-346.71",
+            "y": "-76.65",
+            "z": "950.40",
+            "angle_z": "-7.57",
+            "angle_y": "-2.59",
+            "angle_x": "-178.24",
+            "object_length": "341.92",
+            "object_width": "228.46",
+            "object_height": "212.10",
+            "object_type": "2",
+            "score": "0.954"
+          }
+        },
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0006",
+            "x": "-70.27",
+            "y": "288.79",
+            "z": "1141.55",
+            "angle_z": "14.05",
+            "angle_y": "-3.05",
+            "angle_x": "-179.32",
+            "object_length": "472.11",
+            "object_width": "280.98",
+            "object_height": "43.58",
+            "object_type": "2",
+            "score": "0.941"
+          }
+        },
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0007",
+            "x": "197.23",
+            "y": "29.97",
+            "z": "885.46",
+            "angle_z": "-25.65",
+            "angle_y": "-1.92",
+            "angle_x": "-177.53",
+            "object_length": "281.50",
+            "object_width": "193.29",
+            "object_height": "302.63",
+            "object_type": "2",
+            "score": "0.867"
+          }
+        },
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0008",
+            "x": "-87.06",
+            "y": "-14.49",
+            "z": "862.90",
+            "angle_z": "3.30",
+            "angle_y": "-2.87",
+            "angle_x": "-178.76",
+            "object_length": "312.88",
+            "object_width": "123.83",
+            "object_height": "314.03",
+            "object_type": "2",
+            "score": "0.844"
+          }
+        },
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0009",
+            "x": "51.52",
+            "y": "-190.24",
+            "z": "1096.03",
+            "angle_z": "5.27",
+            "angle_y": "-2.91",
+            "angle_x": "-178.86",
+            "object_length": "298.07",
+            "object_width": "131.48",
+            "object_height": "91.67",
+            "object_type": "2",
+            "score": "0.838"
+          }
+        },
+        {
+          "device": "arm1",
+          "location": {
+            "object_id": "pkg_0010",
+            "x": "-28.62",
+            "y": "-112.78",
+            "z": "996.46",
+            "angle_z": "9.03",
+            "angle_y": "-2.98",
+            "angle_x": "-179.06",
+            "object_length": "290.69",
+            "object_width": "237.09",
+            "object_height": "188.45",
+            "object_type": "2",
+            "score": "0.803"
+          }
+        }
+      ]
+    }
+  },
+  "tcp_cont": {
+    "transaction_id": "stacked-simulation-20260718",
+    "send_time": 0,
+    "service_type": "package_location"
+  }
+}

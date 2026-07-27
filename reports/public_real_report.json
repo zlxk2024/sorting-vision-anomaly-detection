@@ -1,0 +1,101 @@
+{
+  "suite": "public_real_point_cloud_smoke_test",
+  "source": "data/public/pcl_table_scene_lms400.pcd",
+  "raw_points": 460400,
+  "finite_points": 460400,
+  "bounded_points": 457656,
+  "unit_scale_to_mm": 1000.0,
+  "axis_bounds_mm": {
+    "min": [
+      -1079.200029373169,
+      -690.2400255203247,
+      -1908.9000225067139
+    ],
+    "max": [
+      900.9600281715393,
+      428.99999022483826,
+      -1036.2000465393066
+    ]
+  },
+  "plane_inlier_ratio": 0.5934304368346531,
+  "plane_residual_mm": {
+    "median": 1.0817450078894528,
+    "p95": 3.2520778056983173
+  },
+  "detected_clusters": 5,
+  "runtime_ms": 363.16783399999997,
+  "detections": [
+    {
+      "object_id": "pkg_0001",
+      "x": "-838.61",
+      "y": "-486.21",
+      "z": "-1348.24",
+      "angle_z": "-73.65",
+      "angle_y": "-60.07",
+      "angle_x": "-14.66",
+      "object_length": "674.71",
+      "object_width": "329.37",
+      "object_height": "541.23",
+      "object_type": "2",
+      "score": "0.600"
+    },
+    {
+      "object_id": "pkg_0002",
+      "x": "731.49",
+      "y": "-64.26",
+      "z": "-1499.32",
+      "angle_z": "31.90",
+      "angle_y": "44.15",
+      "angle_x": "-47.72",
+      "object_length": "728.71",
+      "object_width": "251.85",
+      "object_height": "513.99",
+      "object_type": "2",
+      "score": "0.600"
+    },
+    {
+      "object_id": "pkg_0003",
+      "x": "-709.47",
+      "y": "-41.63",
+      "z": "-1815.70",
+      "angle_z": "4.06",
+      "angle_y": "8.13",
+      "angle_x": "-60.82",
+      "object_length": "42.58",
+      "object_width": "26.51",
+      "object_height": "262.12",
+      "object_type": "2",
+      "score": "0.394"
+    },
+    {
+      "object_id": "pkg_0004",
+      "x": "-163.64",
+      "y": "-32.73",
+      "z": "-1290.11",
+      "angle_z": "-77.07",
+      "angle_y": "-60.47",
+      "angle_x": "-11.69",
+      "object_length": "131.95",
+      "object_width": "12.12",
+      "object_height": "546.92",
+      "object_type": "2",
+      "score": "0.224"
+    },
+    {
+      "object_id": "pkg_0005",
+      "x": "569.44",
+      "y": "-294.83",
+      "z": "-1690.36",
+      "angle_z": "41.35",
+      "angle_y": "50.41",
+      "angle_x": "-40.76",
+      "object_length": "142.94",
+      "object_width": "4.27",
+      "object_height": "331.28",
+      "object_type": "2",
+      "score": "0.203"
+    }
+  ],
+  "accuracy_available": false,
+  "accuracy_note": "This public scene has no parcel instance ground truth; cluster output is a robustness smoke test, not parcel accuracy."
+}

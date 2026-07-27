@@ -1,0 +1,5 @@
+model_version,rule_version,test_set_version,event_type,gt_count,tp,fp,fn,precision,recall,f1,false_alarms_per_camera_hour,duplicate_alarm_rate,p50_latency_seconds,p95_latency_seconds,p99_latency_seconds,entity_assignment_accuracy,acceptance_threshold,result,reviewer,notes
+MODEL-V1,RULE-V1,TEST-V1,open_no_drop,,,,,,,,,,,,,,,PoC/试点/验收门槛,待评估,,
+MODEL-V1,RULE-V1,TEST-V1,wrong_chute,,,,,,,,,,,,,,,PoC/试点/验收门槛,待评估,,
+MODEL-V1,RULE-V1,TEST-V1,multi_parcel_drawer,,,,,,,,,,,,,,,PoC/试点/验收门槛,待评估,,
+MODEL-V1,RULE-V1,TEST-V1,chute_stall,,,,,,,,,,,,,,,PoC/试点/验收门槛,待评估,,

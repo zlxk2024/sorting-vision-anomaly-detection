@@ -1,0 +1,134 @@
+{
+  "suite": "real_rgbd_object_cloud_synthetic_conveyor_layout",
+  "source_dataset": "UW RGB-D Object Dataset cereal_box_1",
+  "source_frames": [
+    "cereal_box_1_4_1.pcd",
+    "cereal_box_1_4_30.pcd",
+    "cereal_box_1_4_120.pcd"
+  ],
+  "input_points": 57569,
+  "expected_parcels": 3,
+  "detected_parcels": 3,
+  "runtime_ms": 209.77529100000004,
+  "center_xy_error_mm": {
+    "count": 3,
+    "mean": 73.80411164832493,
+    "max": 113.71070553034794
+  },
+  "grasp_xy_error_mm": {
+    "count": 3,
+    "mean": 98.28914065682953,
+    "max": 135.45677844564577
+  },
+  "length_error_mm": {
+    "count": 3,
+    "mean": 28.86057283179711,
+    "max": 55.87981906347676
+  },
+  "width_error_mm": {
+    "count": 3,
+    "mean": 41.36161660766985,
+    "max": 84.21375925086564
+  },
+  "height_error_mm": {
+    "count": 3,
+    "mean": 8.038305111775314,
+    "max": 10.34605123689223
+  },
+  "matches": [
+    {
+      "source": "cereal_box_1_4_30.pcd",
+      "expected": {
+        "source": "cereal_box_1_4_30.pcd",
+        "center_xy": [
+          260.0,
+          -130.0
+        ],
+        "length": 306.59858033036136,
+        "width": 152.27937637251625,
+        "height": 71.64417040523905,
+        "yaw": 27.0
+      },
+      "detected": {
+        "object_id": "pkg_0001",
+        "x": "150.86",
+        "y": "-156.28",
+        "z": "965.42",
+        "angle_z": "-2.47",
+        "angle_y": "0.18",
+        "angle_x": "-179.72",
+        "object_length": "250.72",
+        "object_width": "68.07",
+        "object_height": "61.30",
+        "object_type": "2",
+        "score": "0.600"
+      },
+      "center_xy_error_mm": 113.71070553034794,
+      "grasp_xy_error_mm": 112.2619275891437
+    },
+    {
+      "source": "cereal_box_1_4_120.pcd",
+      "expected": {
+        "source": "cereal_box_1_4_120.pcd",
+        "center_xy": [
+          20.0,
+          240.0
+        ],
+        "length": 314.53235464972227,
+        "width": 153.15134296433808,
+        "height": 67.6420558276001,
+        "yaw": -22.0
+      },
+      "detected": {
+        "object_id": "pkg_0002",
+        "x": "-19.15",
+        "y": "213.73",
+        "z": "964.57",
+        "angle_z": "-13.76",
+        "angle_y": "0.24",
+        "angle_x": "-179.76",
+        "object_length": "299.73",
+        "object_width": "143.62",
+        "object_height": "60.75",
+        "object_type": "2",
+        "score": "0.474"
+      },
+      "center_xy_error_mm": 52.418608792918704,
+      "grasp_xy_error_mm": 47.14871593569911
+    },
+    {
+      "source": "cereal_box_1_4_1.pcd",
+      "expected": {
+        "source": "cereal_box_1_4_1.pcd",
+        "center_xy": [
+          -330.0,
+          -180.0
+        ],
+        "length": 309.87318379423584,
+        "width": 151.62793363096498,
+        "height": 67.9342898617813,
+        "yaw": 0.0
+      },
+      "detected": {
+        "object_id": "pkg_0003",
+        "x": "-464.15",
+        "y": "-161.26",
+        "z": "962.24",
+        "angle_z": "5.56",
+        "angle_y": "0.14",
+        "angle_x": "-179.69",
+        "object_length": "293.97",
+        "object_width": "121.29",
+        "object_height": "61.06",
+        "object_type": "2",
+        "score": "0.405"
+      },
+      "center_xy_error_mm": 55.28302062170817,
+      "grasp_xy_error_mm": 135.45677844564577
+    }
+  ],
+  "limitations": [
+    "Object surfaces are real RGB-D captures, but the conveyor plane and object placement are synthetic.",
+    "The source files contain pre-segmented single objects, not a complete cluttered conveyor frame."
+  ]
+}

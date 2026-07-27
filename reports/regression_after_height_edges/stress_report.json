@@ -1,0 +1,59 @@
+{
+  "suite": "high_fidelity_synthetic_point_cloud",
+  "seed": 20260715,
+  "scene_count": 100,
+  "expected_parcels": 388,
+  "detected_parcels": 388,
+  "matched_parcels": 388,
+  "precision": 1.0,
+  "recall": 1.0,
+  "exact_count_scene_rate": 1.0,
+  "position_error_mm": {
+    "count": 388,
+    "mean": 4.815674624090164,
+    "median": 3.5169962214095367,
+    "p95": 13.014320787616489,
+    "max": 61.75899507308936
+  },
+  "height_error_mm": {
+    "count": 388,
+    "mean": 3.6907080756831245,
+    "median": 2.3762089489286495,
+    "p95": 10.435204164291504,
+    "max": 13.360726213046917
+  },
+  "length_error_mm": {
+    "count": 388,
+    "mean": 4.500585826605985,
+    "median": 3.4609805660750084,
+    "p95": 13.19234585540357,
+    "max": 21.25171807370893
+  },
+  "width_error_mm": {
+    "count": 388,
+    "mean": 5.704114569586315,
+    "median": 4.620058235420537,
+    "p95": 16.271564019884323,
+    "max": 25.550410715480524
+  },
+  "orientation_error_degrees": {
+    "count": 388,
+    "mean": 0.4463843605619672,
+    "median": 0.24937688424298088,
+    "p95": 1.4073700027738107,
+    "max": 7.271480322332426
+  },
+  "runtime_ms": {
+    "count": 100,
+    "mean": 134.15690708,
+    "median": 84.7873125000005,
+    "p95": 232.8632934499998,
+    "max": 3027.4954589999998
+  },
+  "failure_count": 0,
+  "failures": [],
+  "limits": [
+    "Synthetic sensor model; results are not a replacement for on-site camera validation.",
+    "Parcels are single-layer and spatially separated; fully touching parcels are outside this baseline."
+  ]
+}

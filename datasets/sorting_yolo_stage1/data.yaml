@@ -1,0 +1,11 @@
+path: /Users/lixing.guo/Documents/机械臂/datasets/sorting_yolo_stage1
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: parcel
+  1: drawer_open
+  2: drawer_closed
+  3: chute
+  4: bag

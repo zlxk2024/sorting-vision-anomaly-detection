@@ -1,0 +1,500 @@
+{
+  "step_seconds": 0.2,
+  "frames": [
+    {
+      "time": 18.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.00.jpg"
+    },
+    {
+      "time": 18.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.20.jpg"
+    },
+    {
+      "time": 18.4,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.40.jpg"
+    },
+    {
+      "time": 18.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.60.jpg"
+    },
+    {
+      "time": 18.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.80.jpg"
+    },
+    {
+      "time": 19.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.00.jpg"
+    },
+    {
+      "time": 19.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.20.jpg"
+    },
+    {
+      "time": 19.4,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.40.jpg"
+    },
+    {
+      "time": 19.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.60.jpg"
+    },
+    {
+      "time": 19.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.80.jpg"
+    },
+    {
+      "time": 20.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.00.jpg"
+    },
+    {
+      "time": 20.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.20.jpg"
+    },
+    {
+      "time": 20.4,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.40.jpg"
+    },
+    {
+      "time": 20.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.60.jpg"
+    },
+    {
+      "time": 20.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.80.jpg"
+    },
+    {
+      "time": 21.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.00.jpg"
+    },
+    {
+      "time": 21.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.20.jpg"
+    },
+    {
+      "time": 21.4,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.40.jpg"
+    },
+    {
+      "time": 21.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.60.jpg"
+    },
+    {
+      "time": 21.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.80.jpg"
+    },
+    {
+      "time": 22.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.00.jpg"
+    },
+    {
+      "time": 22.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.20.jpg"
+    },
+    {
+      "time": 22.4,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.40.jpg"
+    },
+    {
+      "time": 22.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.60.jpg"
+    },
+    {
+      "time": 22.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.80.jpg"
+    },
+    {
+      "time": 23.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.00.jpg"
+    },
+    {
+      "time": 23.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.20.jpg"
+    },
+    {
+      "time": 23.4,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.40.jpg"
+    },
+    {
+      "time": 23.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.60.jpg"
+    },
+    {
+      "time": 23.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.80.jpg"
+    },
+    {
+      "time": 24.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.00.jpg"
+    },
+    {
+      "time": 24.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.20.jpg"
+    },
+    {
+      "time": 24.4,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.40.jpg"
+    },
+    {
+      "time": 24.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.60.jpg"
+    },
+    {
+      "time": 24.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.80.jpg"
+    },
+    {
+      "time": 25.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.00.jpg"
+    },
+    {
+      "time": 25.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.20.jpg"
+    },
+    {
+      "time": 25.4,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.40.jpg"
+    },
+    {
+      "time": 25.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.60.jpg"
+    },
+    {
+      "time": 25.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.80.jpg"
+    },
+    {
+      "time": 26.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t26.00.jpg"
+    }
+  ],
+  "chunks": [
+    {
+      "start": 18.0,
+      "end": 20.2,
+      "frames": [
+        {
+          "time": 18.0,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.00.jpg"
+        },
+        {
+          "time": 18.2,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.20.jpg"
+        },
+        {
+          "time": 18.4,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.40.jpg"
+        },
+        {
+          "time": 18.6,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.60.jpg"
+        },
+        {
+          "time": 18.8,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t18.80.jpg"
+        },
+        {
+          "time": 19.0,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.00.jpg"
+        },
+        {
+          "time": 19.2,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.20.jpg"
+        },
+        {
+          "time": 19.4,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.40.jpg"
+        },
+        {
+          "time": 19.6,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.60.jpg"
+        },
+        {
+          "time": 19.8,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t19.80.jpg"
+        },
+        {
+          "time": 20.0,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.00.jpg"
+        },
+        {
+          "time": 20.2,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.20.jpg"
+        }
+      ],
+      "finish_reason": "stop",
+      "content": "{\"frame_observations\":[{\"time\":\"18.0s\",\"observation\":\"上层传送带有包裹向左移动\"},{\"time\":\"18.2s\",\"observation\":\"包裹在传送带上向左滑行\"},{\"time\":\"18.4s\",\"observation\":\"灰色包裹出现在传送带中段\"},{\"time\":\"18.6s\",\"observation\":\"包裹在传送带托盘中移动\"},{\"time\":\"18.8s\",\"observation\":\"包裹在传送带右移\"},{\"time\":\"19.0s\",\"observation\":\"深色包裹在传送带中部\"},{\"time\":\"19.2s\",\"observation\":\"包裹继续在传送带上移动\"},{\"time\":\"19.4s\",\"observation\":\"包裹接近传送带右段\"},{\"time\":\"19.6s\",\"observation\":\"包裹在传送带右侧区域\"},{\"time\":\"19.8s\",\"observation\":\"包裹停留在传送带右侧\"},{\"time\":\"20.0s\",\"observation\":\"包裹仍在传送带右部\"},{\"time\":\"20.2s\",\"observation\":\"包裹位于传送带右段托盘上\"}],\"events\":[{\"start_time\":\"18.0s\",\"end_time\":\"20.2s\",\"type\":\"normal\",\"open_chute\":\"未知\",\"actual_chute\":\"未知\",\"evidence\":\"全程仅见包裹在传送带托盘上移动，未见明确抽屉/格口打开动作，也未见包裹下落或卡滞\",\"confidence\":0.6}],\"false_positive_risk\":\"medium\",\"need_human_review\":true}",
+      "raw_response": {
+        "id": "06b2b5b9aec7e3cb3d84bbd24ddb7d7d",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "{\"frame_observations\":[{\"time\":\"18.0s\",\"observation\":\"上层传送带有包裹向左移动\"},{\"time\":\"18.2s\",\"observation\":\"包裹在传送带上向左滑行\"},{\"time\":\"18.4s\",\"observation\":\"灰色包裹出现在传送带中段\"},{\"time\":\"18.6s\",\"observation\":\"包裹在传送带托盘中移动\"},{\"time\":\"18.8s\",\"observation\":\"包裹在传送带右移\"},{\"time\":\"19.0s\",\"observation\":\"深色包裹在传送带中部\"},{\"time\":\"19.2s\",\"observation\":\"包裹继续在传送带上移动\"},{\"time\":\"19.4s\",\"observation\":\"包裹接近传送带右段\"},{\"time\":\"19.6s\",\"observation\":\"包裹在传送带右侧区域\"},{\"time\":\"19.8s\",\"observation\":\"包裹停留在传送带右侧\"},{\"time\":\"20.0s\",\"observation\":\"包裹仍在传送带右部\"},{\"time\":\"20.2s\",\"observation\":\"包裹位于传送带右段托盘上\"}],\"events\":[{\"start_time\":\"18.0s\",\"end_time\":\"20.2s\",\"type\":\"normal\",\"open_chute\":\"未知\",\"actual_chute\":\"未知\",\"evidence\":\"全程仅见包裹在传送带托盘上移动，未见明确抽屉/格口打开动作，也未见包裹下落或卡滞\",\"confidence\":0.6}],\"false_positive_risk\":\"medium\",\"need_human_review\":true}",
+              "role": "assistant",
+              "name": "system",
+              "audio_content": "",
+              "reasoning_content": "Let me analyze the video frames from 18.0s to 20.2s carefully.\n\nThe scene shows a sorting system with:\n- An upper conveyor belt with sliding chutes/trays\n- A lower orange inclined surface (chute) leading down to a collection bag\n- A signal tower light on the left\n\nLet me track what I see:\n\n18.0s: I can see the upper conveyor with what appears to be packages/bags on the sliding trays. There's a collection bag at the bottom.\n\n18.2s: Similar view, packages visible on the upper conveyor trays.\n\n18.4s: Packages visible on the upper conveyor.\n\n18.6s: A package (appears to be a dark bag/wrapped item) is visible on the upper conveyor sliding.\n\n18.8s: Package continues moving on the upper conveyor.\n\n19.0s: Package visible on upper conveyor moving rightward.\n\n19.2s: Package moving on upper conveyor.\n\n19.4s: Package moving on upper conveyor, approaching the right side.\n\n19.6s: Package on upper conveyor, near the right edge.\n\n19.8s: Package visible on the upper conveyor, moving to the right side.\n\n20.0s: Package appears to be on the upper conveyor at the right portion.\n\n20.2s: Package visible on the upper conveyor in the middle-right area.\n\nLooking at this more carefully, I see a package on the upper conveyor/sliding system throughout most of the frames. The package seems to be moving along the upper conveyor but I don't clearly see it drop into a chute.\n\nLet me look again more carefully:\n\n- The upper level has sliding trays/chutes that can open\n- I can see a package (dark/gray wrapped item) on the upper conveyor moving from left to right\n- The orange inclined surface below is the main chute leading to the collection bag\n\nAt 18.0-19.0s: Package is visible on the upper left trays, moving rightward\nAt 19.2-19.4s: Package continues moving right\nAt 19.6-20.0s: Package is on the right side of the upper conveyor\nAt 20.2s: Package is still visible on the upper conveyor\n\nI don't clearly see the package dropping into the orange chute. The package appears to stay on the upper conveyor throughout the video segment.\n\nWait, let me reconsider. The \"抽屉\" (drawer/chute) in this context might be the upper sliding trays. Looking at the frames:\n\n- I can see packages on the upper conveyor trays\n- The trays appear to have opening mechanisms\n- I need to determine if a package is on an open tray but not dropping\n\nLooking at frames 19.6-20.2s, I can see a package (dark bag) on the right side of the upper conveyor. The package appears to be on a sliding tray.\n\nActually, I need to be more careful. The \"orange chute\" in the middle of the image seems to be the main sortation chute. The upper level is the conveyor system with sliding trays.\n\nLooking at the package movement:\n- 18.0-18.6s: Package visible on upper conveyor, moving\n- 19.0-19.4s: Package continues on upper conveyor\n- 19.6-20.2s: Package on right side of upper conveyor\n\nI don't see a clear \"drawer opening\" action that would trigger a drop. The package seems to be moving along the conveyor normally.\n\nWait, let me look at the orange surface in the middle. Is that a chute that's open? And is there a package on it?\n\nLooking at the middle orange surface - it appears to be the main inclined chute. I don't see a package clearly on this orange surface.\n\nLooking at the upper conveyor - I can see packages moving along the sliding trays. \n\nActually, looking more carefully at the later frames (19.4-20.2s), I can see what appears to be a package (dark/gray wrapped) on the right portion of the upper conveyor. The package seems to be sitting on the trays.\n\nHmm, but I need to determine if there's an anomaly. The package seems to be moving along the conveyor normally. I don't see a clear case of:\n1. open_no_drop - not clear if a chute is open with a package on it\n2. slide_abnormal - package seems to be sliding normally\n3. wrong_chute - no clear wrong chute action\n4. multi_parcel_on_cart - I can only see one package clearly\n\nActually, let me reconsider. Looking at frames 18.0-19.0s, I see what might be packages on the upper conveyor trays. The upper conveyor appears to be moving packages along.\n\nLooking at the orange chute in the middle - it appears to be in normal position (closed or just the inclined surface). I don't see a clear drawer opening action.\n\nI think this is likely a normal operation - package moving along the conveyor. Without seeing a clear anomaly, I should mark it as normal or uncertain.\n\nWait, I need to look more carefully at the package position. Let me trace it:\n\n18.0s: There's a package visible in the upper left area, on a tray\n18.2s: Package visible on upper conveyor\n18.4s: Package on upper conveyor, moving right\n18.6s: Package on upper conveyor\n18.8s: Package on upper conveyor\n19.0s: Package on upper conveyor, middle area\n19.2s: Package on upper conveyor\n19.4s: Package on upper conveyor\n19.6s: Package on upper conveyor, right area\n19.8s: Package on upper conveyor, right area\n20.0s: Package on upper conveyor\n20.2s: Package on upper conveyor\n\nThe package seems to be moving along the upper conveyor from left to right. I don't see it dropping into a chute in these frames.\n\nActually, I notice that the package appears to be sliding along the upper trays. The trays have a mechanism to open. I need to determine if the package is being delivered to a chute and dropping.\n\nLooking at the middle orange area, I don't see a clear package dropping. The package seems to be on the upper conveyor only.\n\nGiven the difficulty in determining the exact anomaly, I should mark this as uncertain or normal.\n\nLet me look one more time at specific frames:\n\nAt 19.6s, I can see a dark package on the right portion of the upper conveyor. It appears to be on a tray.\nAt 19.8s, the package is still there, on the right side.\nAt 20.0s, the package appears to be at the right edge.\nAt 20.2s, the package is still visible on the right portion of the upper conveyor.\n\nThe package seems to be in the right area of the upper conveyor, possibly about to be delivered to a chute. But I don't see a clear drop or anomaly.\n\nI'll mark this as normal/uncertain. Without clearer evidence of an anomaly, and following the strict rules, I should be cautious.\n\nActually, looking at the orange inclined surface in the middle, this is the main sortation chute. The \"drawer\" in this context would be the upper sliding trays that open to drop packages into this chute.\n\nThroughout the frames, I can see packages on the upper conveyor trays. I don't see a clear \"drawer open with package\" + \"package not dropping\" scenario. The packages seem to be moving along the conveyor normally.\n\nI'll mark this as normal with low confidence, or uncertain.\n\nLet me provide the final assessment:\n\nGiven the analysis, I see:\n- Packages moving on the upper conveyor\n- No clear \"open_no_drop\" scenario (no clear open drawer with a package not dropping)\n- No clear \"wrong_chute\" scenario\n- No clear \"slide_abnormal\" scenario\n- No clear \"multi_parcel_on_cart\" scenario\n\nThe video appears to show normal package movement along the conveyor. I'll mark it as normal.\n\nActually, I need to be more careful. Let me look at what happens in these frames:\n\nThe \"orange chute\" in the middle of the image is the main sortation chute. The upper conveyor has trays that can open to drop packages.\n\nLooking at the frames:\n- 18.0-19.0s: Package moving along upper conveyor\n- 19.0-20.2s: Package continues along upper conveyor, reaches right side\n\nI notice that the package doesn't seem to drop into the orange chute during this time. It stays on the upper conveyor.\n\nBut this could be normal - the package might be in transit to its assigned chute. Without seeing a clear \"open drawer + not dropping\" scenario, I can't definitively say it's an anomaly.\n\nActually, looking more carefully, I see there are multiple sliding trays on the upper conveyor. The package might be moving from one tray to another. The trays don't appear to be open.\n\nI'll mark this as normal with appropriate confidence.\n\nWait, I see something. Looking at frames 19.4-20.2s, there's a package on the right side of the upper conveyor. The package seems to be sitting on a tray, but I don't see it dropping.\n\nHmm, but without a clear \"open drawer\" indicator, I can't say it's \"open_no_drop\". \n\nLet me finalize my assessment:\n- The video shows package movement on the upper conveyor\n- No clear anomaly detected\n- Mark as normal\n\nActually, I want to be more careful. Let me look at the signal tower light:\n- 18.0s: Light appears to be green/yellow\n- 18.2-20.2s: Light appears to be off or yellow\n\nThe light tower doesn't clearly indicate a \"drawer open\" event.\n\nWithout more clear evidence, I'll mark this as normal.\n\nLet me write the JSON output now.\n\nFrame observations:\n- 18.0s: 上层传送带上有包裹在移动\n- 18.2s: 包裹继续在上层传送带移动\n- 18.4s: 包裹在传送带上\n- 18.6s: 灰色包裹在传送带上\n- 18.8s: 包裹在传送带上\n- 19.0s: 包裹在传送带中部\n- 19.2s: 包裹在传送带上\n- 19.4s: 包裹接近传送带右侧\n- 19.6s: 包裹在传送带右侧\n- 19.8s: 包裹在传送带右侧\n- 20.0s: 包裹在传送带右侧\n- 20.2s: 包裹在传送带右部\n\nEvents: normal (no clear anomaly detected)\n\nFalse positive risk: medium (because it's hard to tell definitively)\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "id": "reasoning-text-1",
+                  "format": "MiniMax-response-v1",
+                  "index": 0,
+                  "text": "Let me analyze the video frames from 18.0s to 20.2s carefully.\n\nThe scene shows a sorting system with:\n- An upper conveyor belt with sliding chutes/trays\n- A lower orange inclined surface (chute) leading down to a collection bag\n- A signal tower light on the left\n\nLet me track what I see:\n\n18.0s: I can see the upper conveyor with what appears to be packages/bags on the sliding trays. There's a collection bag at the bottom.\n\n18.2s: Similar view, packages visible on the upper conveyor trays.\n\n18.4s: Packages visible on the upper conveyor.\n\n18.6s: A package (appears to be a dark bag/wrapped item) is visible on the upper conveyor sliding.\n\n18.8s: Package continues moving on the upper conveyor.\n\n19.0s: Package visible on upper conveyor moving rightward.\n\n19.2s: Package moving on upper conveyor.\n\n19.4s: Package moving on upper conveyor, approaching the right side.\n\n19.6s: Package on upper conveyor, near the right edge.\n\n19.8s: Package visible on the upper conveyor, moving to the right side.\n\n20.0s: Package appears to be on the upper conveyor at the right portion.\n\n20.2s: Package visible on the upper conveyor in the middle-right area.\n\nLooking at this more carefully, I see a package on the upper conveyor/sliding system throughout most of the frames. The package seems to be moving along the upper conveyor but I don't clearly see it drop into a chute.\n\nLet me look again more carefully:\n\n- The upper level has sliding trays/chutes that can open\n- I can see a package (dark/gray wrapped item) on the upper conveyor moving from left to right\n- The orange inclined surface below is the main chute leading to the collection bag\n\nAt 18.0-19.0s: Package is visible on the upper left trays, moving rightward\nAt 19.2-19.4s: Package continues moving right\nAt 19.6-20.0s: Package is on the right side of the upper conveyor\nAt 20.2s: Package is still visible on the upper conveyor\n\nI don't clearly see the package dropping into the orange chute. The package appears to stay on the upper conveyor throughout the video segment.\n\nWait, let me reconsider. The \"抽屉\" (drawer/chute) in this context might be the upper sliding trays. Looking at the frames:\n\n- I can see packages on the upper conveyor trays\n- The trays appear to have opening mechanisms\n- I need to determine if a package is on an open tray but not dropping\n\nLooking at frames 19.6-20.2s, I can see a package (dark bag) on the right side of the upper conveyor. The package appears to be on a sliding tray.\n\nActually, I need to be more careful. The \"orange chute\" in the middle of the image seems to be the main sortation chute. The upper level is the conveyor system with sliding trays.\n\nLooking at the package movement:\n- 18.0-18.6s: Package visible on upper conveyor, moving\n- 19.0-19.4s: Package continues on upper conveyor\n- 19.6-20.2s: Package on right side of upper conveyor\n\nI don't see a clear \"drawer opening\" action that would trigger a drop. The package seems to be moving along the conveyor normally.\n\nWait, let me look at the orange surface in the middle. Is that a chute that's open? And is there a package on it?\n\nLooking at the middle orange surface - it appears to be the main inclined chute. I don't see a package clearly on this orange surface.\n\nLooking at the upper conveyor - I can see packages moving along the sliding trays. \n\nActually, looking more carefully at the later frames (19.4-20.2s), I can see what appears to be a package (dark/gray wrapped) on the right portion of the upper conveyor. The package seems to be sitting on the trays.\n\nHmm, but I need to determine if there's an anomaly. The package seems to be moving along the conveyor normally. I don't see a clear case of:\n1. open_no_drop - not clear if a chute is open with a package on it\n2. slide_abnormal - package seems to be sliding normally\n3. wrong_chute - no clear wrong chute action\n4. multi_parcel_on_cart - I can only see one package clearly\n\nActually, let me reconsider. Looking at frames 18.0-19.0s, I see what might be packages on the upper conveyor trays. The upper conveyor appears to be moving packages along.\n\nLooking at the orange chute in the middle - it appears to be in normal position (closed or just the inclined surface). I don't see a clear drawer opening action.\n\nI think this is likely a normal operation - package moving along the conveyor. Without seeing a clear anomaly, I should mark it as normal or uncertain.\n\nWait, I need to look more carefully at the package position. Let me trace it:\n\n18.0s: There's a package visible in the upper left area, on a tray\n18.2s: Package visible on upper conveyor\n18.4s: Package on upper conveyor, moving right\n18.6s: Package on upper conveyor\n18.8s: Package on upper conveyor\n19.0s: Package on upper conveyor, middle area\n19.2s: Package on upper conveyor\n19.4s: Package on upper conveyor\n19.6s: Package on upper conveyor, right area\n19.8s: Package on upper conveyor, right area\n20.0s: Package on upper conveyor\n20.2s: Package on upper conveyor\n\nThe package seems to be moving along the upper conveyor from left to right. I don't see it dropping into a chute in these frames.\n\nActually, I notice that the package appears to be sliding along the upper trays. The trays have a mechanism to open. I need to determine if the package is being delivered to a chute and dropping.\n\nLooking at the middle orange area, I don't see a clear package dropping. The package seems to be on the upper conveyor only.\n\nGiven the difficulty in determining the exact anomaly, I should mark this as uncertain or normal.\n\nLet me look one more time at specific frames:\n\nAt 19.6s, I can see a dark package on the right portion of the upper conveyor. It appears to be on a tray.\nAt 19.8s, the package is still there, on the right side.\nAt 20.0s, the package appears to be at the right edge.\nAt 20.2s, the package is still visible on the right portion of the upper conveyor.\n\nThe package seems to be in the right area of the upper conveyor, possibly about to be delivered to a chute. But I don't see a clear drop or anomaly.\n\nI'll mark this as normal/uncertain. Without clearer evidence of an anomaly, and following the strict rules, I should be cautious.\n\nActually, looking at the orange inclined surface in the middle, this is the main sortation chute. The \"drawer\" in this context would be the upper sliding trays that open to drop packages into this chute.\n\nThroughout the frames, I can see packages on the upper conveyor trays. I don't see a clear \"drawer open with package\" + \"package not dropping\" scenario. The packages seem to be moving along the conveyor normally.\n\nI'll mark this as normal with low confidence, or uncertain.\n\nLet me provide the final assessment:\n\nGiven the analysis, I see:\n- Packages moving on the upper conveyor\n- No clear \"open_no_drop\" scenario (no clear open drawer with a package not dropping)\n- No clear \"wrong_chute\" scenario\n- No clear \"slide_abnormal\" scenario\n- No clear \"multi_parcel_on_cart\" scenario\n\nThe video appears to show normal package movement along the conveyor. I'll mark it as normal.\n\nActually, I need to be more careful. Let me look at what happens in these frames:\n\nThe \"orange chute\" in the middle of the image is the main sortation chute. The upper conveyor has trays that can open to drop packages.\n\nLooking at the frames:\n- 18.0-19.0s: Package moving along upper conveyor\n- 19.0-20.2s: Package continues along upper conveyor, reaches right side\n\nI notice that the package doesn't seem to drop into the orange chute during this time. It stays on the upper conveyor.\n\nBut this could be normal - the package might be in transit to its assigned chute. Without seeing a clear \"open drawer + not dropping\" scenario, I can't definitively say it's an anomaly.\n\nActually, looking more carefully, I see there are multiple sliding trays on the upper conveyor. The package might be moving from one tray to another. The trays don't appear to be open.\n\nI'll mark this as normal with appropriate confidence.\n\nWait, I see something. Looking at frames 19.4-20.2s, there's a package on the right side of the upper conveyor. The package seems to be sitting on a tray, but I don't see it dropping.\n\nHmm, but without a clear \"open drawer\" indicator, I can't say it's \"open_no_drop\". \n\nLet me finalize my assessment:\n- The video shows package movement on the upper conveyor\n- No clear anomaly detected\n- Mark as normal\n\nActually, I want to be more careful. Let me look at the signal tower light:\n- 18.0s: Light appears to be green/yellow\n- 18.2-20.2s: Light appears to be off or yellow\n\nThe light tower doesn't clearly indicate a \"drawer open\" event.\n\nWithout more clear evidence, I'll mark this as normal.\n\nLet me write the JSON output now.\n\nFrame observations:\n- 18.0s: 上层传送带上有包裹在移动\n- 18.2s: 包裹继续在上层传送带移动\n- 18.4s: 包裹在传送带上\n- 18.6s: 灰色包裹在传送带上\n- 18.8s: 包裹在传送带上\n- 19.0s: 包裹在传送带中部\n- 19.2s: 包裹在传送带上\n- 19.4s: 包裹接近传送带右侧\n- 19.6s: 包裹在传送带右侧\n- 19.8s: 包裹在传送带右侧\n- 20.0s: 包裹在传送带右侧\n- 20.2s: 包裹在传送带右部\n\nEvents: normal (no clear anomaly detected)\n\nFalse positive risk: medium (because it's hard to tell definitively)\n\nLet me finalize the JSON."
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1784906426,
+        "model": "MiniMax-M3",
+        "object": "chat.completion",
+        "usage": {
+          "total_tokens": 17711,
+          "total_characters": 0,
+          "prompt_tokens": 15171,
+          "completion_tokens": 2540,
+          "prompt_tokens_details": {
+            "cached_tokens": 114
+          }
+        },
+        "input_sensitive": false,
+        "output_sensitive": false,
+        "input_sensitive_type": 0,
+        "output_sensitive_type": 0,
+        "output_sensitive_int": 0,
+        "service_tier": "standard",
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        }
+      }
+    },
+    {
+      "start": 20.4,
+      "end": 22.2,
+      "frames": [
+        {
+          "time": 20.4,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.40.jpg"
+        },
+        {
+          "time": 20.6,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.60.jpg"
+        },
+        {
+          "time": 20.8,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t20.80.jpg"
+        },
+        {
+          "time": 21.0,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.00.jpg"
+        },
+        {
+          "time": 21.2,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.20.jpg"
+        },
+        {
+          "time": 21.4,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.40.jpg"
+        },
+        {
+          "time": 21.6,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.60.jpg"
+        },
+        {
+          "time": 21.8,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t21.80.jpg"
+        },
+        {
+          "time": 22.0,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.00.jpg"
+        },
+        {
+          "time": 22.2,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.20.jpg"
+        }
+      ],
+      "finish_reason": "stop",
+      "content": "```json\n{\n  \"frame_observations\": [\n    {\"time\": \"20.40s\", \"observation\": \"传送带右侧有一小暗色物体移动\"},\n    {\"time\": \"20.60s\", \"observation\": \"暗色物体继续在传送带上移动\"},\n    {\"time\": \"20.80s\", \"observation\": \"传送带上物体位置变化，格口静止\"},\n    {\"time\": \"21.00s\", \"observation\": \"传送带运行，暗色物体向左移动\"},\n    {\"time\": \"21.20s\", \"observation\": \"传送带上物体继续向左移动\"},\n    {\"time\": \"21.40s\", \"observation\": \"传送带输送物体经过格口上方\"},\n    {\"time\": \"21.60s\", \"observation\": \"物体位置变化，格口盖板未动\"},\n    {\"time\": \"21.80s\", \"observation\": \"格口盖板开始动作，传送带空\"},\n    {\"time\": \"22.00s\", \"observation\": \"左侧格口盖板打开，未见包裹下落\"},\n    {\"time\": \"22.20s\", \"observation\": \"格口盖板处于开/闭切换状态，无包裹可见\"}\n  ],\n  \"events\": [\n    {\n      \"start_time\": \"20.4s\",\n      \"end_time\": \"22.2s\",\n      \"type\": \"normal\",\n      \"open_chute\": \"未知\",\n      \"actual_chute\": \"无\",\n      \"evidence\": \"20.4-22.2s全程未见包裹从格口下落，传送带物体过小无法确认，格口动作正常\",\n      \"confidence\": 0.6\n    }\n  ],\n  \"false_positive_risk\": \"medium\",\n  \"need_human_review\": true\n}\n```",
+      "raw_response": {
+        "id": "06b2b5dec6d481e0c7f47875e6a4deaa",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "```json\n{\n  \"frame_observations\": [\n    {\"time\": \"20.40s\", \"observation\": \"传送带右侧有一小暗色物体移动\"},\n    {\"time\": \"20.60s\", \"observation\": \"暗色物体继续在传送带上移动\"},\n    {\"time\": \"20.80s\", \"observation\": \"传送带上物体位置变化，格口静止\"},\n    {\"time\": \"21.00s\", \"observation\": \"传送带运行，暗色物体向左移动\"},\n    {\"time\": \"21.20s\", \"observation\": \"传送带上物体继续向左移动\"},\n    {\"time\": \"21.40s\", \"observation\": \"传送带输送物体经过格口上方\"},\n    {\"time\": \"21.60s\", \"observation\": \"物体位置变化，格口盖板未动\"},\n    {\"time\": \"21.80s\", \"observation\": \"格口盖板开始动作，传送带空\"},\n    {\"time\": \"22.00s\", \"observation\": \"左侧格口盖板打开，未见包裹下落\"},\n    {\"time\": \"22.20s\", \"observation\": \"格口盖板处于开/闭切换状态，无包裹可见\"}\n  ],\n  \"events\": [\n    {\n      \"start_time\": \"20.4s\",\n      \"end_time\": \"22.2s\",\n      \"type\": \"normal\",\n      \"open_chute\": \"未知\",\n      \"actual_chute\": \"无\",\n      \"evidence\": \"20.4-22.2s全程未见包裹从格口下落，传送带物体过小无法确认，格口动作正常\",\n      \"confidence\": 0.6\n    }\n  ],\n  \"false_positive_risk\": \"medium\",\n  \"need_human_review\": true\n}\n```",
+              "role": "assistant",
+              "name": "system",
+              "audio_content": "",
+              "reasoning_content": "The user wants me to analyze a sequence of keyframes from a parcel sorting video between 20.4s and 22.2s. I need to identify any anomalies.\n\nLet me examine each frame carefully:\n\n- 20.40s: I can see a sorting facility with multiple chutes/drawers. There's a conveyor system at the top with what appears to be a small dark object (possibly a package) on the right side of the conveyor. Below are orange sorting chutes. A yellow/white striped bag is visible in the foreground.\n\n- 20.60s: Similar view. The dark object on the conveyor appears to be moving or has moved. I can see the sorting mechanism.\n\n- 20.80s: The dark object on the conveyor is still visible on the right side.\n\n- 21.00s: The conveyor seems to be moving. The dark object is still visible.\n\n- 21.20s: The dark object is still on the conveyor, moving left.\n\n- 21.40s: The object continues moving along the conveyor.\n\n- 21.60s: The object has moved to a different position on the conveyor.\n\n- 21.80s: The conveyor is visible, no clear package visible in the chutes.\n\n- 22.00s: The chutes appear to be opening/moving. I can see the mechanism working.\n\n- 22.20s: The chutes have shifted positions, with the leftmost one appearing to open.\n\nLooking at this more carefully:\n- I can see what appears to be a small dark package/object on the upper conveyor moving from right to left across the frames.\n- The lower chutes (orange triangular structures) are the sorting destinations.\n- The yellow striped bag in the foreground appears to be a collection bag on a cart.\n\nI don't clearly see a package being dropped into any of the chutes. The dark object on the upper conveyor seems to just be moving along the belt. I don't see any obvious anomaly like:\n- A package stuck on an open chute (open_no_drop)\n- A package sliding abnormally\n- A package going to the wrong chute\n- Multiple packages on a cart\n\nThe chutes seem to be operating normally, and I can't clearly identify any packages in the dropping process. The small dark items on the conveyor could be packages or just debris/mechanical parts.\n\nGiven the rules:\n- \"如果没有明确看到包裹，不允许判定 open_no_drop、slide_abnormal 或 wrong_chute\"\n- \"如果只看到盖板/抽屉运动，但没有看到包裹，必须判 normal 或 uncertain\"\n\nI don't see clear evidence of a package being dropped or stuck. The scene mostly shows the sorting equipment and conveyor movement. I should mark this as normal or uncertain.\n\nLet me look again more carefully at the dark objects on the conveyor. They appear to be small items moving along. In the lower part, I see the yellow striped bag which is a collection container, not a package being sorted.\n\nI'll mark this as normal since I don't see any clear anomaly.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "id": "reasoning-text-1",
+                  "format": "MiniMax-response-v1",
+                  "index": 0,
+                  "text": "The user wants me to analyze a sequence of keyframes from a parcel sorting video between 20.4s and 22.2s. I need to identify any anomalies.\n\nLet me examine each frame carefully:\n\n- 20.40s: I can see a sorting facility with multiple chutes/drawers. There's a conveyor system at the top with what appears to be a small dark object (possibly a package) on the right side of the conveyor. Below are orange sorting chutes. A yellow/white striped bag is visible in the foreground.\n\n- 20.60s: Similar view. The dark object on the conveyor appears to be moving or has moved. I can see the sorting mechanism.\n\n- 20.80s: The dark object on the conveyor is still visible on the right side.\n\n- 21.00s: The conveyor seems to be moving. The dark object is still visible.\n\n- 21.20s: The dark object is still on the conveyor, moving left.\n\n- 21.40s: The object continues moving along the conveyor.\n\n- 21.60s: The object has moved to a different position on the conveyor.\n\n- 21.80s: The conveyor is visible, no clear package visible in the chutes.\n\n- 22.00s: The chutes appear to be opening/moving. I can see the mechanism working.\n\n- 22.20s: The chutes have shifted positions, with the leftmost one appearing to open.\n\nLooking at this more carefully:\n- I can see what appears to be a small dark package/object on the upper conveyor moving from right to left across the frames.\n- The lower chutes (orange triangular structures) are the sorting destinations.\n- The yellow striped bag in the foreground appears to be a collection bag on a cart.\n\nI don't clearly see a package being dropped into any of the chutes. The dark object on the upper conveyor seems to just be moving along the belt. I don't see any obvious anomaly like:\n- A package stuck on an open chute (open_no_drop)\n- A package sliding abnormally\n- A package going to the wrong chute\n- Multiple packages on a cart\n\nThe chutes seem to be operating normally, and I can't clearly identify any packages in the dropping process. The small dark items on the conveyor could be packages or just debris/mechanical parts.\n\nGiven the rules:\n- \"如果没有明确看到包裹，不允许判定 open_no_drop、slide_abnormal 或 wrong_chute\"\n- \"如果只看到盖板/抽屉运动，但没有看到包裹，必须判 normal 或 uncertain\"\n\nI don't see clear evidence of a package being dropped or stuck. The scene mostly shows the sorting equipment and conveyor movement. I should mark this as normal or uncertain.\n\nLet me look again more carefully at the dark objects on the conveyor. They appear to be small items moving along. In the lower part, I see the yellow striped bag which is a collection container, not a package being sorted.\n\nI'll mark this as normal since I don't see any clear anomaly."
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1784906462,
+        "model": "MiniMax-M3",
+        "object": "chat.completion",
+        "usage": {
+          "total_tokens": 13751,
+          "total_characters": 0,
+          "prompt_tokens": 12761,
+          "completion_tokens": 990,
+          "prompt_tokens_details": {
+            "cached_tokens": 114
+          }
+        },
+        "input_sensitive": false,
+        "output_sensitive": false,
+        "input_sensitive_type": 0,
+        "output_sensitive_type": 0,
+        "output_sensitive_int": 0,
+        "service_tier": "standard",
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        }
+      }
+    },
+    {
+      "start": 22.4,
+      "end": 26.0,
+      "frames": [
+        {
+          "time": 22.4,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.40.jpg"
+        },
+        {
+          "time": 22.6,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.60.jpg"
+        },
+        {
+          "time": 22.8,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t22.80.jpg"
+        },
+        {
+          "time": 23.0,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.00.jpg"
+        },
+        {
+          "time": 23.2,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.20.jpg"
+        },
+        {
+          "time": 23.4,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.40.jpg"
+        },
+        {
+          "time": 23.6,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.60.jpg"
+        },
+        {
+          "time": 23.8,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t23.80.jpg"
+        },
+        {
+          "time": 24.0,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.00.jpg"
+        },
+        {
+          "time": 24.2,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.20.jpg"
+        },
+        {
+          "time": 24.4,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.40.jpg"
+        },
+        {
+          "time": 24.6,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.60.jpg"
+        },
+        {
+          "time": 24.8,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t24.80.jpg"
+        },
+        {
+          "time": 25.0,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.00.jpg"
+        },
+        {
+          "time": 25.2,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.20.jpg"
+        },
+        {
+          "time": 25.4,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.40.jpg"
+        },
+        {
+          "time": 25.6,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.60.jpg"
+        },
+        {
+          "time": 25.8,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t25.80.jpg"
+        },
+        {
+          "time": 26.0,
+          "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_18_26_step02/frames/t26.00.jpg"
+        }
+      ],
+      "finish_reason": "stop",
+      "content": "```json\n{\n  \"frame_observations\": [\n    {\"time\": \"22.40s\", \"observation\": \"分拣线运行中，未见包裹在格口上\"},\n    {\"time\": \"22.60s\", \"observation\": \"小车/格口运动中，无可见包裹\"},\n    {\"time\": \"22.80s\", \"observation\": \"格口运行正常，未见包裹滞留\"},\n    {\"time\": \"23.00s\", \"observation\": \"左侧格口盖板运动，无包裹可见\"},\n    {\"time\": \"23.20s\", \"observation\": \"格口继续运行，无包裹滞留\"},\n    {\"time\": \"23.40s\", \"observation\": \"分拣线运行，无明显包裹\"},\n    {\"time\": \"23.60s\", \"observation\": \"格口盖板开合动作，无可见包裹\"},\n    {\"time\": \"23.80s\", \"observation\": \"格口打开/关闭，无滞留包裹\"},\n    {\"time\": \"24.00s\", \"observation\": \"左侧格口出现浅色小包裹\"},\n    {\"time\": \"24.20s\", \"observation\": \"包裹在左格口斜面下滑中\"},\n    {\"time\": \"24.40s\", \"observation\": \"包裹沿左侧斜面正常下滑\"},\n    {\"time\": \"24.60s\", \"observation\": \"包裹继续下滑接近袋口\"},\n    {\"time\": \"24.80s\", \"observation\": \"包裹落入左下方集装袋\"},\n    {\"time\": \"25.00s\", \"observation\": \"左格口已清空，其余格口无包裹\"},\n    {\"time\": \"25.20s\", \"observation\": \"分拣线正常运行，无异常\"},\n    {\"time\": \"25.40s\", \"observation\": \"格口区域无包裹滞留\"},\n    {\"time\": \"25.60s\", \"observation\": \"小车循环运行，无包裹可见\"},\n    {\"time\": \"25.80s\", \"observation\": \"分拣线持续运行\"},\n    {\"time\": \"26.00s\", \"observation\": \"无异常状态\"}\n  ],\n  \"events\": [\n    {\n      \"start_time\": \"24.0s\",\n      \"end_time\": \"24.8s\",\n      \"type\": \"normal\",\n      \"open_chute\": \"左\",\n      \"actual_chute\": \"左\",\n      \"evidence\": \"24.00s包裹出现在左格口，24.20-24.60s沿斜面正常下滑，24.80s落入对应集装袋\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"false_positive_risk\": \"low\",\n  \"need_human_review\": false\n}\n```",
+      "raw_response": {
+        "id": "06b2b5ee8e739d5014de38e051064fe6",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "```json\n{\n  \"frame_observations\": [\n    {\"time\": \"22.40s\", \"observation\": \"分拣线运行中，未见包裹在格口上\"},\n    {\"time\": \"22.60s\", \"observation\": \"小车/格口运动中，无可见包裹\"},\n    {\"time\": \"22.80s\", \"observation\": \"格口运行正常，未见包裹滞留\"},\n    {\"time\": \"23.00s\", \"observation\": \"左侧格口盖板运动，无包裹可见\"},\n    {\"time\": \"23.20s\", \"observation\": \"格口继续运行，无包裹滞留\"},\n    {\"time\": \"23.40s\", \"observation\": \"分拣线运行，无明显包裹\"},\n    {\"time\": \"23.60s\", \"observation\": \"格口盖板开合动作，无可见包裹\"},\n    {\"time\": \"23.80s\", \"observation\": \"格口打开/关闭，无滞留包裹\"},\n    {\"time\": \"24.00s\", \"observation\": \"左侧格口出现浅色小包裹\"},\n    {\"time\": \"24.20s\", \"observation\": \"包裹在左格口斜面下滑中\"},\n    {\"time\": \"24.40s\", \"observation\": \"包裹沿左侧斜面正常下滑\"},\n    {\"time\": \"24.60s\", \"observation\": \"包裹继续下滑接近袋口\"},\n    {\"time\": \"24.80s\", \"observation\": \"包裹落入左下方集装袋\"},\n    {\"time\": \"25.00s\", \"observation\": \"左格口已清空，其余格口无包裹\"},\n    {\"time\": \"25.20s\", \"observation\": \"分拣线正常运行，无异常\"},\n    {\"time\": \"25.40s\", \"observation\": \"格口区域无包裹滞留\"},\n    {\"time\": \"25.60s\", \"observation\": \"小车循环运行，无包裹可见\"},\n    {\"time\": \"25.80s\", \"observation\": \"分拣线持续运行\"},\n    {\"time\": \"26.00s\", \"observation\": \"无异常状态\"}\n  ],\n  \"events\": [\n    {\n      \"start_time\": \"24.0s\",\n      \"end_time\": \"24.8s\",\n      \"type\": \"normal\",\n      \"open_chute\": \"左\",\n      \"actual_chute\": \"左\",\n      \"evidence\": \"24.00s包裹出现在左格口，24.20-24.60s沿斜面正常下滑，24.80s落入对应集装袋\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"false_positive_risk\": \"low\",\n  \"need_human_review\": false\n}\n```",
+              "role": "assistant",
+              "name": "system",
+              "audio_content": "",
+              "reasoning_content": "Let me analyze the video frames from 22.4s to 26.0s carefully.\n\nLooking at the frames:\n- 22.4s to 23.8s: I see the sorting facility with chutes, but no clear parcel visible on the cart/chute\n- 24.0s: A small white object appears on the left chute area\n- 24.2s: The white object is sliding down the left chute\n- 24.4s: The parcel is on the left chute sliding down\n- 24.6s: The parcel continues sliding on the left chute\n- 24.8s: The parcel has dropped off the chute into the bag below\n- 25.0s to 26.0s: The left chute is empty, other chutes show no parcels\n\nThe parcel appears to slide normally down the left chute from about 24.0s to 24.8s. It drops into the bag normally.\n\nLet me check for any anomalies:\n- No parcels stuck on open chutes\n- No slide abnormal - the parcel slides normally\n- No wrong chute - it goes into the left chute/bag\n- No multiple parcels on cart\n\nThe motion looks like a normal parcel sliding down a chute into the collection bag. No clear anomalies detected.\n\nWait, let me look more carefully. The chute doors/lids - are any of them open? Looking at the frames, the chutes seem to be the orange/brown structures below the cart system. The parcel appears to be on the left chute surface sliding down.\n\nActually, looking again - I see a small white/light object appearing at 24.0s on the left chute, sliding down through 24.2s, 24.4s, 24.6s, and disappearing into the bag by 24.8s. This seems like normal behavior.\n\nNo anomalies are clearly visible. This should be marked as normal or uncertain.\n\nGiven the strict rules, since I can see a parcel sliding but it appears to go normally into the bag, I should mark this as normal. The parcel appears to be on the left chute and drops into the bag below it, which seems like correct behavior.\n\nLet me also consider if the chute lid/door was open. The chutes in this facility appear to be sloped surfaces rather than drawer-style with lids. The parcel slides down the surface into the bag.\n\nSince the behavior appears normal, I'll mark it as normal with appropriate confidence.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "id": "reasoning-text-1",
+                  "format": "MiniMax-response-v1",
+                  "index": 0,
+                  "text": "Let me analyze the video frames from 22.4s to 26.0s carefully.\n\nLooking at the frames:\n- 22.4s to 23.8s: I see the sorting facility with chutes, but no clear parcel visible on the cart/chute\n- 24.0s: A small white object appears on the left chute area\n- 24.2s: The white object is sliding down the left chute\n- 24.4s: The parcel is on the left chute sliding down\n- 24.6s: The parcel continues sliding on the left chute\n- 24.8s: The parcel has dropped off the chute into the bag below\n- 25.0s to 26.0s: The left chute is empty, other chutes show no parcels\n\nThe parcel appears to slide normally down the left chute from about 24.0s to 24.8s. It drops into the bag normally.\n\nLet me check for any anomalies:\n- No parcels stuck on open chutes\n- No slide abnormal - the parcel slides normally\n- No wrong chute - it goes into the left chute/bag\n- No multiple parcels on cart\n\nThe motion looks like a normal parcel sliding down a chute into the collection bag. No clear anomalies detected.\n\nWait, let me look more carefully. The chute doors/lids - are any of them open? Looking at the frames, the chutes seem to be the orange/brown structures below the cart system. The parcel appears to be on the left chute surface sliding down.\n\nActually, looking again - I see a small white/light object appearing at 24.0s on the left chute, sliding down through 24.2s, 24.4s, 24.6s, and disappearing into the bag by 24.8s. This seems like normal behavior.\n\nNo anomalies are clearly visible. This should be marked as normal or uncertain.\n\nGiven the strict rules, since I can see a parcel sliding but it appears to go normally into the bag, I should mark this as normal. The parcel appears to be on the left chute and drops into the bag below it, which seems like correct behavior.\n\nLet me also consider if the chute lid/door was open. The chutes in this facility appear to be sloped surfaces rather than drawer-style with lids. The parcel slides down the surface into the bag.\n\nSince the behavior appears normal, I'll mark it as normal with appropriate confidence."
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1784906478,
+        "model": "MiniMax-M3",
+        "object": "chat.completion",
+        "usage": {
+          "total_tokens": 24685,
+          "total_characters": 0,
+          "prompt_tokens": 23606,
+          "completion_tokens": 1079,
+          "prompt_tokens_details": {
+            "cached_tokens": 114
+          }
+        },
+        "input_sensitive": false,
+        "output_sensitive": false,
+        "input_sensitive_type": 0,
+        "output_sensitive_type": 0,
+        "output_sensitive_int": 0,
+        "service_tier": "standard",
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        }
+      }
+    }
+  ]
+}

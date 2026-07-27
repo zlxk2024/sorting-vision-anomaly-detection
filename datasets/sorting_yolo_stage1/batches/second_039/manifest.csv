@@ -1,0 +1,15 @@
+image,frame_no,time_seconds,annotation_standard,parcel,drawer_open,drawer_closed,chute,bag,review_status
+frame_001171.jpg,1171,39.000,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001172.jpg,1172,39.033,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001173.jpg,1173,39.067,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001174.jpg,1174,39.100,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001175.jpg,1175,39.133,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001176.jpg,1176,39.167,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001177.jpg,1177,39.200,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001178.jpg,1178,39.233,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001179.jpg,1179,39.267,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001180.jpg,1180,39.300,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001181.jpg,1181,39.333,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001182.jpg,1182,39.367,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001183.jpg,1183,39.400,v1.2,0,0,0,2,1,visual_reviewed_first_pass
+frame_001184.jpg,1184,39.433,v1.2,0,0,0,2,1,visual_reviewed_first_pass

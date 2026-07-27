@@ -1,0 +1,17 @@
+{
+  "grid_size": 5.0,
+  "min_height": 10.0,
+  "max_height": 800.0,
+  "min_area": 1800.0,
+  "max_area": 1500000.0,
+  "plane_distance_threshold": 5.0,
+  "plane_ransac_iterations": 180,
+  "morphology_radius": 1,
+  "segmentation_method": "height_edges",
+  "height_edge_threshold": 12.0,
+  "suction_radius": 25.0,
+  "local_flatness_radius": 35.0,
+  "max_local_roughness": 16.0,
+  "min_detection_score": 0.68,
+  "random_seed": 7
+}

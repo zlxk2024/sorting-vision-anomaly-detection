@@ -1,0 +1,92 @@
+{
+  "start": 20.6,
+  "end": 22.2,
+  "step_seconds": 0.2,
+  "crop": "crop=720:620:0:120",
+  "frames": [
+    {
+      "time": 20.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_21_count_first/frames_upper_roi/t20.60.jpg"
+    },
+    {
+      "time": 20.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_21_count_first/frames_upper_roi/t20.80.jpg"
+    },
+    {
+      "time": 21.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_21_count_first/frames_upper_roi/t21.00.jpg"
+    },
+    {
+      "time": 21.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_21_count_first/frames_upper_roi/t21.20.jpg"
+    },
+    {
+      "time": 21.4,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_21_count_first/frames_upper_roi/t21.40.jpg"
+    },
+    {
+      "time": 21.6,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_21_count_first/frames_upper_roi/t21.60.jpg"
+    },
+    {
+      "time": 21.8,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_21_count_first/frames_upper_roi/t21.80.jpg"
+    },
+    {
+      "time": 22.0,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_21_count_first/frames_upper_roi/t22.00.jpg"
+    },
+    {
+      "time": 22.2,
+      "path": "/Users/lixing.guo/Documents/机械臂/outputs/minimax_m3_video_review/focus_21_count_first/frames_upper_roi/t22.20.jpg"
+    }
+  ],
+  "content": "```json\n{\n  \"frame_counts\": [\n    {\"time\": \"20.60s\", \"parcel_count\": 1, \"notes\": \"暗色包裹在中右位小车\"},\n    {\"time\": \"20.80s\", \"parcel_count\": 1, \"notes\": \"暗色包裹在中右位小车\"},\n    {\"time\": \"21.00s\", \"parcel_count\": 2, \"notes\": \"中部小车1件+右侧小车1件暗色包裹\"},\n    {\"time\": \"21.20s\", \"parcel_count\": 2, \"notes\": \"中左小车1件+右侧小车1件暗色包裹\"},\n    {\"time\": \"21.40s\", \"parcel_count\": 1, \"notes\": \"右侧小车1件暗色包裹\"},\n    {\"time\": \"21.60s\", \"parcel_count\": 1, \"notes\": \"右侧小车1件暗色包裹\"},\n    {\"time\": \"21.80s\", \"parcel_count\": 1, \"notes\": \"右侧小车1件浅色包裹\"},\n    {\"time\": \"22.00s\", \"parcel_count\": 1, \"notes\": \"右侧小车1件浅色包裹\"},\n    {\"time\": \"22.20s\", \"parcel_count\": 0, \"notes\": \"上部小车区域无可辨包裹\"}\n  ],\n  \"two_parcels_visible\": true,\n  \"multi_parcel_on_same_cart\": \"no\",\n  \"open_no_drop_verdict\": \"no\",\n  \"confidence\": 0.62,\n  \"key_frames\": [\"21.00s\", \"21.20s\"],\n  \"evidence\": \"21.00s/21.20s中部与右侧相邻小车各1件包裹同时可见，属两件同框不同车；未观察到已开抽屉停件不落现象。\",\n  \"human_action\": \"accept\"\n}\n```",
+  "raw_response": {
+    "id": "06b2bc20c4652e8b803d6219f4ce2abd",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n{\n  \"frame_counts\": [\n    {\"time\": \"20.60s\", \"parcel_count\": 1, \"notes\": \"暗色包裹在中右位小车\"},\n    {\"time\": \"20.80s\", \"parcel_count\": 1, \"notes\": \"暗色包裹在中右位小车\"},\n    {\"time\": \"21.00s\", \"parcel_count\": 2, \"notes\": \"中部小车1件+右侧小车1件暗色包裹\"},\n    {\"time\": \"21.20s\", \"parcel_count\": 2, \"notes\": \"中左小车1件+右侧小车1件暗色包裹\"},\n    {\"time\": \"21.40s\", \"parcel_count\": 1, \"notes\": \"右侧小车1件暗色包裹\"},\n    {\"time\": \"21.60s\", \"parcel_count\": 1, \"notes\": \"右侧小车1件暗色包裹\"},\n    {\"time\": \"21.80s\", \"parcel_count\": 1, \"notes\": \"右侧小车1件浅色包裹\"},\n    {\"time\": \"22.00s\", \"parcel_count\": 1, \"notes\": \"右侧小车1件浅色包裹\"},\n    {\"time\": \"22.20s\", \"parcel_count\": 0, \"notes\": \"上部小车区域无可辨包裹\"}\n  ],\n  \"two_parcels_visible\": true,\n  \"multi_parcel_on_same_cart\": \"no\",\n  \"open_no_drop_verdict\": \"no\",\n  \"confidence\": 0.62,\n  \"key_frames\": [\"21.00s\", \"21.20s\"],\n  \"evidence\": \"21.00s/21.20s中部与右侧相邻小车各1件包裹同时可见，属两件同框不同车；未观察到已开抽屉停件不落现象。\",\n  \"human_action\": \"accept\"\n}\n```",
+          "role": "assistant",
+          "name": "system",
+          "audio_content": "",
+          "reasoning_content": "Let me analyze the frames carefully, focusing on the upper mechanism ROI (the conveyor/cart system at the top of the image).\n\nFrame 20.60s: I can see what appears to be a dark parcel on a cart/slot in the middle area. The left cart has some white/light colored object. Looking more carefully - there's a dark item on the middle-right cart.\n\nFrame 20.80s: A dark parcel visible on the middle-right cart area. The left side shows a lighter object (could be equipment/baffle).\n\nFrame 21.00s: Two dark parcels visible - one on the middle cart and one on the right cart. This shows two parcels in adjacent carts.\n\nFrame 21.20s: Two dark parcels visible - one on middle-left cart and one on right cart.\n\nFrame 21.40s: One dark parcel visible on the right cart area. Middle area seems empty or parcel has moved.\n\nFrame 21.60s: One dark parcel visible on the right cart.\n\nFrame 21.80s: One light/white parcel visible on the right cart area.\n\nFrame 22.00s: One light parcel visible on the right cart.\n\nFrame 22.20s: No parcels clearly visible on the carts.\n\nLet me reconsider:\n- 20.60s: 1 parcel (dark, on middle-right cart)\n- 20.80s: 1 parcel (dark, on middle-right cart)\n- 21.00s: 2 parcels (dark on middle cart, dark on right cart) - two parcels visible\n- 21.20s: 2 parcels (one on middle-left cart, one on right cart)\n- 21.40s: 1 parcel (on right cart)\n- 21.60s: 1 parcel (on right cart, appears smaller/different)\n- 21.80s: 1 parcel (lighter colored, on right cart)\n- 22.00s: 1 parcel (on right cart)\n- 22.20s: 0-1 parcels (uncertain)\n\nThe two parcels are in adjacent carts, not the same cart. So multi_parcel_on_same_cart = no.\n\nFor open_no_drop: I need to check if any parcel sits at an open drawer without dropping. Looking at the frames, the parcels seem to be moving along on the conveyor system. I don't see any obvious \"open drawer with parcel sitting\" scenario. The carts appear to be closed/standard conveyor.\n\nWait, let me look again. The dark objects might be on the conveyor belt surface, not necessarily in opened drawers. The mechanism shows carts/slots that appear to be in transit position. No obvious \"open and parcel stuck\" scenario.\n\nActually, looking more carefully, these appear to be tilting tray sorters. The carts have parcels on them and are moving along. There's no clear \"open drawer\" with parcel stuck.\n\ntwo_parcels_visible: Yes, at 21.00s and 21.20s there are two parcels visible simultaneously in adjacent carts.\n\nmulti_parcel_on_same_cart: No, the two parcels are in different/adjacent carts.\n\nopen_no_drop_verdict: No clear evidence of open drawer with stuck parcel. The mechanism appears normal.\n\nConfidence: 0.6 (the resolution makes it hard to be certain about exact positions)",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "id": "reasoning-text-1",
+              "format": "MiniMax-response-v1",
+              "index": 0,
+              "text": "Let me analyze the frames carefully, focusing on the upper mechanism ROI (the conveyor/cart system at the top of the image).\n\nFrame 20.60s: I can see what appears to be a dark parcel on a cart/slot in the middle area. The left cart has some white/light colored object. Looking more carefully - there's a dark item on the middle-right cart.\n\nFrame 20.80s: A dark parcel visible on the middle-right cart area. The left side shows a lighter object (could be equipment/baffle).\n\nFrame 21.00s: Two dark parcels visible - one on the middle cart and one on the right cart. This shows two parcels in adjacent carts.\n\nFrame 21.20s: Two dark parcels visible - one on middle-left cart and one on right cart.\n\nFrame 21.40s: One dark parcel visible on the right cart area. Middle area seems empty or parcel has moved.\n\nFrame 21.60s: One dark parcel visible on the right cart.\n\nFrame 21.80s: One light/white parcel visible on the right cart area.\n\nFrame 22.00s: One light parcel visible on the right cart.\n\nFrame 22.20s: No parcels clearly visible on the carts.\n\nLet me reconsider:\n- 20.60s: 1 parcel (dark, on middle-right cart)\n- 20.80s: 1 parcel (dark, on middle-right cart)\n- 21.00s: 2 parcels (dark on middle cart, dark on right cart) - two parcels visible\n- 21.20s: 2 parcels (one on middle-left cart, one on right cart)\n- 21.40s: 1 parcel (on right cart)\n- 21.60s: 1 parcel (on right cart, appears smaller/different)\n- 21.80s: 1 parcel (lighter colored, on right cart)\n- 22.00s: 1 parcel (on right cart)\n- 22.20s: 0-1 parcels (uncertain)\n\nThe two parcels are in adjacent carts, not the same cart. So multi_parcel_on_same_cart = no.\n\nFor open_no_drop: I need to check if any parcel sits at an open drawer without dropping. Looking at the frames, the parcels seem to be moving along on the conveyor system. I don't see any obvious \"open drawer with parcel sitting\" scenario. The carts appear to be closed/standard conveyor.\n\nWait, let me look again. The dark objects might be on the conveyor belt surface, not necessarily in opened drawers. The mechanism shows carts/slots that appear to be in transit position. No obvious \"open and parcel stuck\" scenario.\n\nActually, looking more carefully, these appear to be tilting tray sorters. The carts have parcels on them and are moving along. There's no clear \"open drawer\" with parcel stuck.\n\ntwo_parcels_visible: Yes, at 21.00s and 21.20s there are two parcels visible simultaneously in adjacent carts.\n\nmulti_parcel_on_same_cart: No, the two parcels are in different/adjacent carts.\n\nopen_no_drop_verdict: No clear evidence of open drawer with stuck parcel. The mechanism appears normal.\n\nConfidence: 0.6 (the resolution makes it hard to be certain about exact positions)"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1784908064,
+    "model": "MiniMax-M3",
+    "object": "chat.completion",
+    "usage": {
+      "total_tokens": 7090,
+      "total_characters": 0,
+      "prompt_tokens": 5995,
+      "completion_tokens": 1095,
+      "prompt_tokens_details": {
+        "cached_tokens": 114
+      }
+    },
+    "input_sensitive": false,
+    "output_sensitive": false,
+    "input_sensitive_type": 0,
+    "output_sensitive_type": 0,
+    "output_sensitive_int": 0,
+    "service_tier": "standard",
+    "base_resp": {
+      "status_code": 0,
+      "status_msg": ""
+    }
+  }
+}

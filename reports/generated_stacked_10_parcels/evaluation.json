@@ -1,0 +1,169 @@
+{
+  "expected_parcels": 10,
+  "detected_parcels": 10,
+  "matched_parcels": 10,
+  "mean_grasp_error_mm": 97.65439864123714,
+  "mean_orientation_error_degrees": 3.441819608418951,
+  "matches": [
+    {
+      "prediction_id": "pkg_0001",
+      "truth_id": "truth_0008",
+      "kind": "padded_mailer",
+      "grasp_error_mm": 25.101514594928776,
+      "length_error_mm": 1.5487044432918537,
+      "width_error_mm": 3.033209308312024,
+      "height_error_mm": 104.27224360552475,
+      "orientation_error_degrees": 0.3020219728931853
+    },
+    {
+      "prediction_id": "pkg_0002",
+      "truth_id": "truth_0003",
+      "kind": "cardboard_box",
+      "grasp_error_mm": 169.58554183696424,
+      "length_error_mm": 6.524528297310098,
+      "width_error_mm": 10.293954214560301,
+      "height_error_mm": 2.042408757702077,
+      "orientation_error_degrees": 1.914117641519131
+    },
+    {
+      "prediction_id": "pkg_0003",
+      "truth_id": "truth_0001",
+      "kind": "cardboard_box",
+      "grasp_error_mm": 170.58806758937655,
+      "length_error_mm": 4.05737874211718,
+      "width_error_mm": 3.2149845548306075,
+      "height_error_mm": 2.09772725064812,
+      "orientation_error_degrees": 0.10966834483908128
+    },
+    {
+      "prediction_id": "pkg_0004",
+      "truth_id": "truth_0007",
+      "kind": "cardboard_box",
+      "grasp_error_mm": 96.0669594849377,
+      "length_error_mm": 1.084115927059429,
+      "width_error_mm": 2.5695499444153143,
+      "height_error_mm": 127.06337174219263,
+      "orientation_error_degrees": 0.03463786527185006
+    },
+    {
+      "prediction_id": "pkg_0005",
+      "truth_id": "truth_0005",
+      "kind": "cardboard_box",
+      "grasp_error_mm": 45.49075840779642,
+      "length_error_mm": 1.916927844689269,
+      "width_error_mm": 3.464740851879384,
+      "height_error_mm": 107.09618745721485,
+      "orientation_error_degrees": 0.43337741930706575
+    },
+    {
+      "prediction_id": "pkg_0006",
+      "truth_id": "truth_0004",
+      "kind": "padded_mailer",
+      "grasp_error_mm": 180.7749338541466,
+      "length_error_mm": 2.114055328227664,
+      "width_error_mm": 5.9783269141961455,
+      "height_error_mm": 4.422349754314297,
+      "orientation_error_degrees": 0.0309176139500962
+    },
+    {
+      "prediction_id": "pkg_0007",
+      "truth_id": "truth_0010",
+      "kind": "soft_bag",
+      "grasp_error_mm": 61.05455083695099,
+      "length_error_mm": 3.4958810016385655,
+      "width_error_mm": 1.7068155430112597,
+      "height_error_mm": 214.62975038171555,
+      "orientation_error_degrees": 7.647151391667879
+    },
+    {
+      "prediction_id": "pkg_0008",
+      "truth_id": "truth_0009",
+      "kind": "tube",
+      "grasp_error_mm": 5.801286717295322,
+      "length_error_mm": 2.8813416571207426,
+      "width_error_mm": 1.1726900844066677,
+      "height_error_mm": 204.032877829004,
+      "orientation_error_degrees": 1.7026040597681826
+    },
+    {
+      "prediction_id": "pkg_0009",
+      "truth_id": "truth_0002",
+      "kind": "soft_bag",
+      "grasp_error_mm": 132.45760702973254,
+      "length_error_mm": 171.92841279980314,
+      "width_error_mm": 178.5249161394068,
+      "height_error_mm": 13.333931869859683,
+      "orientation_error_degrees": 15.265959514831964
+    },
+    {
+      "prediction_id": "pkg_0010",
+      "truth_id": "truth_0006",
+      "kind": "soft_bag",
+      "grasp_error_mm": 89.62276606024228,
+      "length_error_mm": 49.309355277452084,
+      "width_error_mm": 2.088107481835209,
+      "height_error_mm": 96.45301052546199,
+      "orientation_error_degrees": 6.9777402601410765
+    }
+  ],
+  "seed": 20260718,
+  "input_points": 46875,
+  "parcel_types": {
+    "cardboard_box": 4,
+    "soft_bag": 3,
+    "padded_mailer": 2,
+    "tube": 1
+  },
+  "visible_points_per_truth": {
+    "1": 1845,
+    "2": 503,
+    "3": 1805,
+    "4": 1386,
+    "5": 1221,
+    "6": 608,
+    "7": 965,
+    "8": 1146,
+    "9": 614,
+    "10": 602
+  },
+  "segmentation_count_error": 0,
+  "baseline_detected_parcels": 1,
+  "optimized_detected_surfaces": 10,
+  "recommended_object_id": "pkg_0008",
+  "eligible_grasp_candidates": 2,
+  "ideal_rgbd_mask_evaluation": {
+    "detected_instances": 10,
+    "visible_surface_error_mm": {
+      "count": 10,
+      "mean": 3.7334232359274266,
+      "p95": 5.019731533392387,
+      "max": 5.159879755484631
+    },
+    "full_object_top_center_error_mm": {
+      "count": 10,
+      "mean": 99.786531256757,
+      "p95": 176.05404881468507,
+      "max": 180.96759729893478
+    },
+    "interpretation": "Visible-surface error measures suction safety; full-center error remains large for partially occluded lower parcels."
+  },
+  "closed_loop_pick_evaluation": {
+    "cleared_parcels": 10,
+    "total_parcels": 10,
+    "completed": true
+  },
+  "files": {
+    "raw_ply": "stacked_10_parcels.ply",
+    "raw_npy": "stacked_10_parcels.npy",
+    "truth_colored_ply": "ground_truth_colored_cloudcompare.ply",
+    "prediction_colored_ply": "prediction_colored_cloudcompare.ply",
+    "comparison": "raw_truth_prediction_comparison.png",
+    "ground_truth": "ground_truth.json",
+    "prediction": "prediction.json",
+    "baseline_prediction": "baseline_prediction.json",
+    "grasp_plan": "grasp_plan.json",
+    "ideal_rgbd_mask_prediction": "ideal_rgbd_mask_prediction.json",
+    "closed_loop_pick_report": "closed_loop_pick_report.json"
+  },
+  "notice": "High-fidelity stacked-scene simulation, not an on-site camera capture."
+}
