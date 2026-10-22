@@ -125,6 +125,7 @@ print(result['events'])
 
 当前算法先完成视频推理，再统一分析异常；不是实时多路 RTSP 告警平台。缺少 PLC/WCS 目标格口时，飘格仅是视觉候选。完整限制见 [KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md)。
 
+- [Docker 实际部署与性能报告](docs/DOCKER_PERFORMANCE_2026-10-22.md)
 - [部署与真实模型验证](docs/DEPLOYMENT_VERIFICATION.md)
 - [V2 训练与评估报告](docs/YOLO_V2_模型训练与评估报告_2026-07-29.md)
 - [标注标准](docs/ANNOTATION_STANDARD_v1.md)

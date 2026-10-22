@@ -17,7 +17,7 @@
 
 本机真实模型测试复用现有 Python 3.9.6、Ultralytics 8.4.104、PyTorch 2.8.0、torchvision 0.23.0、OpenCV 5.0.0.93、NumPy 2.0.2；lap 0.5.12 从临时目录提供，没有把个人虚拟环境提交到仓库。新部署推荐 Python 3.11，项目依赖声明要求 Python >=3.10。
 
-Docker 服务在本机未启动，故未完成镜像实际构建/容器推理；不把 Compose 语法检查作为容器运行成功。Dockerfile 在构建阶段再次校验模型文件。
+后续已从 GitHub 全新克隆并完成 Docker 镜像实际构建、容器内测试、真实视频调用、资源采样、结果视频解码与重启恢复验证。完整记录见 `DOCKER_PERFORMANCE_2026-10-22.md`；Dockerfile 在构建阶段再次校验模型文件。
 
 未连接现场相机、PLC/WCS 或告警设备，未完成多路实时、事件级精度及长期稳定性验收。Horus RKNN 成品和相机应用尚未完成，见 `KNOWN_LIMITATIONS.md`。
 

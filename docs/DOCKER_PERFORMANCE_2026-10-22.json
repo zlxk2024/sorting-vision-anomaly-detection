@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-22",
+  "source_commit": "a8e14b37cf6ad8132b430a37cf4130d22298caf2",
+  "scope": "Fresh private GitHub clone, Git LFS model download, Docker Compose build and CPU API execution. Only benchmark client and documentation were added; service and inference code unchanged.",
+  "environment": {
+    "host_chip": "Apple M1",
+    "host_memory_bytes": 8589934592,
+    "docker_cpu_count": 8,
+    "docker_memory_bytes": 4109737984,
+    "architecture": "linux/arm64",
+    "python": "3.11.17",
+    "torch": "2.8.0+cpu",
+    "torchvision": "0.23.0",
+    "ultralytics": "8.4.183",
+    "opencv_python": "5.0.0.93",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "lap": "0.5.13",
+    "docker_engine": "27.3.1",
+    "compose": "2.30.3",
+    "image_bytes": 1597273624,
+    "image_id": "sha256:f9df46a5c93e4eb01eb4ae8a98988df90f59fbcb38d64d029519a4f1d5d26c26",
+    "shared_host_other_services": true
+  },
+  "pipeline": {
+    "weights": "YOLO11n-V2 PT",
+    "device": "cpu",
+    "image_size": 320,
+    "confidence": 0.15,
+    "tracker": "ByteTrack",
+    "rule_version": "v1",
+    "concurrent_inferences": 1
+  },
+  "workloads": {
+    "source_width": 720,
+    "source_height": 1280,
+    "source_fps": 29.949324324324323,
+    "full_duration_seconds": 39.46666666666667,
+    "clip_duration_seconds": 10.016920473773267
+  },
+  "full_video": {
+    "metric_definition": "Request time includes upload, process/model startup, decoding, detection/tracking, rules, video rendering, and JSON response. Video download is separate. Docker CPU 100% equals one logical CPU. Small-sample summaries are medians/maxima, not tail-latency estimates.",
+    "summary": [
+      {
+        "video": "full_1182_frames.mp4",
+        "requests": 1,
+        "request_seconds_median": 124.4325,
+        "request_seconds_max": 124.4325,
+        "effective_fps_median": 9.499
+      }
+    ],
+    "results": [
+      {
+        "video": "full_1182_frames.mp4",
+        "repeat": 1,
+        "frames": 1182,
+        "request_seconds": 124.4325,
+        "effective_fps": 9.499,
+        "event_count": 3,
+        "download_seconds": 0.3093,
+        "annotated_video_bytes": 46942069,
+        "cpu_percent_mean": 332.75,
+        "cpu_percent_peak": 401.57,
+        "memory_usage_at_peak": "355.9MiB / 3.827GiB"
+      }
+    ],
+    "resource_sample_count": 249
+  },
+  "repeated_clip": {
+    "metric_definition": "Request time includes upload, process/model startup, decoding, detection/tracking, rules, video rendering, and JSON response. Video download is separate. Docker CPU 100% equals one logical CPU. Small-sample summaries are medians/maxima, not tail-latency estimates.",
+    "summary": [
+      {
+        "video": "clip_300_frames.mp4",
+        "requests": 3,
+        "request_seconds_median": 31.2164,
+        "request_seconds_max": 32.5542,
+        "effective_fps_median": 9.61
+      }
+    ],
+    "results": [
+      {
+        "video": "clip_300_frames.mp4",
+        "repeat": 1,
+        "frames": 300,
+        "request_seconds": 29.2318,
+        "effective_fps": 10.263,
+        "event_count": 3,
+        "download_seconds": 0.1019,
+        "annotated_video_bytes": 12108038,
+        "cpu_percent_mean": 322.19,
+        "cpu_percent_peak": 378.26,
+        "memory_usage_at_peak": "337MiB / 3.827GiB"
+      },
+      {
+        "video": "clip_300_frames.mp4",
+        "repeat": 2,
+        "frames": 300,
+        "request_seconds": 31.2164,
+        "effective_fps": 9.61,
+        "event_count": 3,
+        "download_seconds": 0.1304,
+        "annotated_video_bytes": 12108038,
+        "cpu_percent_mean": 320.24,
+        "cpu_percent_peak": 389.0,
+        "memory_usage_at_peak": "338.5MiB / 3.827GiB"
+      },
+      {
+        "video": "clip_300_frames.mp4",
+        "repeat": 3,
+        "frames": 300,
+        "request_seconds": 32.5542,
+        "effective_fps": 9.215,
+        "event_count": 3,
+        "download_seconds": 0.1025,
+        "annotated_video_bytes": 12108038,
+        "cpu_percent_mean": 312.29,
+        "cpu_percent_peak": 390.08,
+        "memory_usage_at_peak": "336MiB / 3.827GiB"
+      }
+    ],
+    "resource_sample_count": 186
+  },
+  "restart_and_artifact_checks": {
+    "status": "passed",
+    "retained_job_result_after_restart": true,
+    "retained_detection_frames": 1182,
+    "annotated_video_frames": 1182,
+    "annotated_video_first_and_last_frame_decodable": true,
+    "post_restart_new_request_frames": 60,
+    "http_ready_seconds_after_restart_command": 1.015,
+    "cgroup_memory_peak_bytes_before_restart": 468262912,
+    "oom_killed": false
+  },
+  "live_http_checks": {
+    "health_during_inference": {
+      "status": 200,
+      "seconds": 0.0303
+    },
+    "unauthorized": 401,
+    "concurrent": 429
+  },
+  "unit_tests_passed": 9,
+  "limitations": [
+    "CPU Linux ARM64 only; not an x86 or GPU benchmark",
+    "One full request and three repeated short requests; no P95/P99 claim",
+    "End-to-end request includes per-job subprocess/model startup and output-video rendering",
+    "Anomaly counts are unreviewed candidates, not event-accuracy measurements",
+    "No input video, detection data, annotated video, credentials or site quotations published"
+  ]
+}
