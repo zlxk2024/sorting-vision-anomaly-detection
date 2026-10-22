@@ -2,7 +2,7 @@ from pathlib import Path
 import shutil
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
+ROOT = Path(__file__).resolve().parents[1]
 SOURCE = (
     ROOT
     / "datasets/sorting_yolo_stage1/m3_prelabels_10/"
@@ -23,8 +23,7 @@ def main() -> None:
             label_path = SOURCE / "labels_yolo" / f"{image_path.stem}.txt"
             shutil.copy2(label_path, label_dir / label_path.name)
 
-    yaml_text = f"""path: {OUTPUT}
-train: images/train
+    yaml_text = """train: images/train
 val: images/val
 names:
   0: parcel

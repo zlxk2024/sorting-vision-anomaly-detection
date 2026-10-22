@@ -1,0 +1,25 @@
+{
+  "model": "YOLO11n",
+  "project_version": "V2",
+  "task": "detect",
+  "classes": [
+    "parcel",
+    "drawer_open",
+    "drawer_closed",
+    "chute",
+    "bag"
+  ],
+  "input_size": 320,
+  "artifacts": [
+    {
+      "filename": "sorting_yolo11n_v2_mixed_best.onnx",
+      "sha256": "2228b1e90b4974629ee3b7d3fe88758a0cc69ed84ffbb9189ad8b08c14decef5",
+      "bytes": 10481171
+    },
+    {
+      "filename": "sorting_yolo11n_v2_mixed_best.pt",
+      "sha256": "21c348d718e36fd5693f4192054a82a042c2f344ffede474df9607fe3390909b",
+      "bytes": 5449809
+    }
+  ]
+}

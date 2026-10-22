@@ -5,7 +5,7 @@ import shutil
 from pathlib import Path
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
+ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "datasets/sorting_yolo_stage1/batches"
 OUTPUT = ROOT / "datasets/sorting_yolo_stage1/yolo_dataset_v1"
 
@@ -41,20 +41,19 @@ def main() -> None:
                 raise FileNotFoundError(label)
             out_image = OUTPUT / "images" / split / image.name
             out_label = OUTPUT / "labels" / split / label.name
-            out_image.symlink_to(image.resolve())
-            out_label.symlink_to(label.resolve())
+            shutil.copy2(image, out_image)
+            shutil.copy2(label, out_label)
             rows.append(
                 {
                     "frame": image.name,
                     "second": second,
                     "split": split,
-                    "image_source": str(image.resolve()),
-                    "label_source": str(label.resolve()),
+                    "image_source": "./" + str(image.resolve().relative_to(ROOT)),
+                    "label_source": "./" + str(label.resolve().relative_to(ROOT)),
                 }
             )
 
     yaml_lines = [
-        f"path: {OUTPUT}",
         "train: images/train",
         "val: images/val",
         "test: images/test",

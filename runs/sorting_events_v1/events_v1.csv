@@ -1,5 +1,0 @@
-type,name,start_frame,end_frame,start_seconds,end_seconds,confidence,track_ids,evidence
-open_no_drop,不掉件,549,567,18.267,18.867,0.497,88,包裹随小车水平移动，但连续多帧没有正常向下位移
-wrong_chute,飘格,566,588,18.833,19.567,0.748,85,包裹轨迹从闸口 1 跨越边界进入闸口 2
-open_no_drop,不掉件,593,640,19.733,21.3,0.519,97,包裹随小车水平移动，但连续多帧没有正常向下位移
-open_no_drop,不掉件,627,658,20.867,21.9,0.739,102,drawer_open 持续存在，包裹相对门板未产生正常向下位移

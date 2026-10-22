@@ -7,13 +7,11 @@ import math
 from collections import defaultdict
 from pathlib import Path
 
-import cv2
-from ultralytics import YOLO
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
-VIDEO = Path("/Users/lixing.guo/Desktop/异常检测视频/快递分类视频.mp4")
-WEIGHTS = ROOT / "runs/sorting_yolo/sorting_yolo11n_v1/weights/best.pt"
+ROOT = Path(__file__).resolve().parents[1]
+VIDEO = (Path(__file__).resolve().parents[1] / "data/videos/快递分类视频.mp4")
+WEIGHTS = ROOT / "models/sorting_yolo11n_v2_mixed_best.pt"
 OUTPUT = ROOT / "runs/sorting_events_v1"
 FPS = 30.0
 
@@ -397,6 +395,8 @@ def analyze(frames):
 
 
 def save_outputs(frames, events):
+    import cv2
+
     OUTPUT.mkdir(parents=True, exist_ok=True)
     (OUTPUT / "events_v1.json").write_text(
         json.dumps(events, ensure_ascii=False, indent=2), encoding="utf-8"
@@ -431,6 +431,10 @@ def save_outputs(frames, events):
         fps,
         (width, height),
     )
+    if not cap.isOpened() or not writer.isOpened():
+        cap.release()
+        writer.release()
+        raise RuntimeError("Cannot open input or encoded output video")
     active_by_frame = defaultdict(list)
     for event in events:
         for frame_no in range(event["start_frame"], event["end_frame"] + 1):
@@ -472,13 +476,16 @@ def save_outputs(frames, events):
 def main():
     global VIDEO, WEIGHTS, OUTPUT, FPS
     parser = argparse.ArgumentParser(description="YOLO + tracking sorting anomaly detector")
-    parser.add_argument("--video", type=Path, default=VIDEO)
+    parser.add_argument("--video", type=Path, required=True)
     parser.add_argument("--weights", type=Path, default=WEIGHTS)
     parser.add_argument("--output", type=Path, default=OUTPUT)
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--imgsz", type=int, default=320)
     parser.add_argument("--conf", type=float, default=0.15)
     args = parser.parse_args()
+    import cv2
+    from ultralytics import YOLO
+
     VIDEO = args.video.expanduser().resolve()
     WEIGHTS = args.weights.expanduser().resolve()
     OUTPUT = args.output.expanduser().resolve()
@@ -488,6 +495,9 @@ def main():
         parser.error(f"weights not found: {WEIGHTS}")
 
     probe = cv2.VideoCapture(str(VIDEO))
+    if not probe.isOpened():
+        probe.release()
+        parser.error("Cannot decode input video")
     detected_fps = probe.get(cv2.CAP_PROP_FPS)
     probe.release()
     if detected_fps and detected_fps > 0:
@@ -529,6 +539,8 @@ def main():
         frames.append({"frame": frame_no, "detections": detections})
         if frame_no % 150 == 0:
             print(f"processed {frame_no} frames")
+    if not frames:
+        parser.error("Video has no decodable frames")
     events = analyze(frames)
     save_outputs(frames, events)
     print(json.dumps(events, ensure_ascii=False, indent=2))

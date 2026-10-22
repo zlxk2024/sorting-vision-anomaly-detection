@@ -7,7 +7,7 @@ import json
 from PIL import Image, ImageDraw, ImageFont
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
+ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "datasets/sorting_two_chutes_supplement/review_10_v1"
 IMAGE_DIR = OUTPUT / "images"
 LABEL_DIR = OUTPUT / "labels_yolo"

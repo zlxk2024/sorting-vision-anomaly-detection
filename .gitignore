@@ -1,31 +1,25 @@
-# Local Python environments and caches
 .venv/
 .venv_*/
 __pycache__/
 *.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.mplcache/
-
-# Editors and operating systems
 .DS_Store
-.idea/
-.vscode/
-
-# Runtime secrets
 .env
 .env.*
 !.env.example
 *.pem
 *.key
-
-# Temporary and generated scratch space
-work/
-tmp/
-*.tmp
 *.log
-
-# Local GitHub release staging directory
-github/
-
+*.cache
+.cache/
+build/
+dist/
+*.egg-info/
+# Local business inputs, training data and generated results.
+datasets/
+data/
+runs/
+outputs/
+reports/
+*.zip
+*.tar.gz
+deploy/horus_rv1126b/quant_images.txt

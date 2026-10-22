@@ -1,2 +1,0 @@
-type,name,start_frame,end_frame,start_seconds,end_seconds,confidence,track_ids,evidence
-open_no_drop,不掉件,3474,3498,128.63,129.519,0.321,1169,包裹随小车水平移动，但连续多帧没有正常向下位移

@@ -17,7 +17,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 
-WORKSPACE = Path("/Users/lixing.guo/Documents/机械臂")
+WORKSPACE = Path(__file__).resolve().parents[1]
 SOURCE_IMAGES = WORKSPACE / "datasets/sorting_yolo_stage1/images/to_label"
 SOURCE_MANIFEST = WORKSPACE / "datasets/sorting_yolo_stage1/frame_manifest.csv"
 PREDICTIONS = (

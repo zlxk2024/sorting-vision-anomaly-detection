@@ -5,7 +5,7 @@ import csv
 import shutil
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
+ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "datasets/sorting_yolo_stage1"
 SOURCE = DATASET / "all_video_frames"
 BATCHES = DATASET / "batches"

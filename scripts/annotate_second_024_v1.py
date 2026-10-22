@@ -6,7 +6,7 @@ import csv
 from PIL import Image, ImageDraw, ImageFont
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
+ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "datasets/sorting_yolo_stage1/all_video_frames"
 OUTPUT = ROOT / "datasets/sorting_yolo_stage1/batches/second_024"
 CLASSES = ["parcel", "drawer_open", "drawer_closed", "chute", "bag"]

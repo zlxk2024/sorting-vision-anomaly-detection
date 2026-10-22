@@ -1,0 +1,146 @@
+{
+  "tag": "yolo_v1_on_mixed_v2",
+  "weights": "external-training-data/v1-best.pt",
+  "imgsz": 320,
+  "batch": 16,
+  "datasets": {
+    "all_test": {
+      "overall": {
+        "precision": 0.645616,
+        "recall": 0.666195,
+        "map50": 0.731666,
+        "map50_95": 0.400665
+      },
+      "per_class": {
+        "parcel": {
+          "precision": 0.217021,
+          "recall": 0.616162,
+          "map50": 0.547162,
+          "map50_95": 0.250902
+        },
+        "drawer_open": {
+          "precision": 0.752057,
+          "recall": 0.606639,
+          "map50": 0.678551,
+          "map50_95": 0.377729
+        },
+        "drawer_closed": {
+          "precision": 0.674524,
+          "recall": 0.727273,
+          "map50": 0.720634,
+          "map50_95": 0.44247
+        },
+        "chute": {
+          "precision": 0.677839,
+          "recall": 0.642424,
+          "map50": 0.765302,
+          "map50_95": 0.479055
+        },
+        "bag": {
+          "precision": 0.906637,
+          "recall": 0.738477,
+          "map50": 0.946681,
+          "map50_95": 0.453168
+        }
+      },
+      "speed_ms_per_image": {
+        "preprocess": 0.372,
+        "inference": 55.215,
+        "loss": 0.0003,
+        "postprocess": 0.5022
+      }
+    },
+    "old_scene_test": {
+      "overall": {
+        "precision": 0.878443,
+        "recall": 0.836895,
+        "map50": 0.87206,
+        "map50_95": 0.603552
+      },
+      "per_class": {
+        "parcel": {
+          "precision": 0.757916,
+          "recall": 0.742424,
+          "map50": 0.807125,
+          "map50_95": 0.37328
+        },
+        "drawer_open": {
+          "precision": 0.786223,
+          "recall": 0.591549,
+          "map50": 0.642414,
+          "map50_95": 0.340106
+        },
+        "drawer_closed": {
+          "precision": 0.879299,
+          "recall": 0.865385,
+          "map50": 0.921435,
+          "map50_95": 0.567442
+        },
+        "chute": {
+          "precision": 0.977779,
+          "recall": 0.985118,
+          "map50": 0.994327,
+          "map50_95": 0.821662
+        },
+        "bag": {
+          "precision": 0.990996,
+          "recall": 1.0,
+          "map50": 0.995,
+          "map50_95": 0.915271
+        }
+      },
+      "speed_ms_per_image": {
+        "preprocess": 0.4255,
+        "inference": 80.0251,
+        "loss": 0.0008,
+        "postprocess": 0.4999
+      }
+    },
+    "new_scene_test": {
+      "overall": {
+        "precision": 0.429397,
+        "recall": 0.485397,
+        "map50": 0.467442,
+        "map50_95": 0.208309
+      },
+      "per_class": {
+        "parcel": {
+          "precision": 0.021276,
+          "recall": 0.242424,
+          "map50": 0.078481,
+          "map50_95": 0.035018
+        },
+        "drawer_open": {
+          "precision": 0.74077,
+          "recall": 0.716216,
+          "map50": 0.808325,
+          "map50_95": 0.497799
+        },
+        "drawer_closed": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "map50": 0.000193,
+          "map50_95": 6.8e-05
+        },
+        "chute": {
+          "precision": 0.565987,
+          "recall": 0.683673,
+          "map50": 0.542638,
+          "map50_95": 0.22441
+        },
+        "bag": {
+          "precision": 0.818952,
+          "recall": 0.784673,
+          "map50": 0.907572,
+          "map50_95": 0.28425
+        }
+      },
+      "speed_ms_per_image": {
+        "preprocess": 0.3289,
+        "inference": 54.7346,
+        "loss": 0.0002,
+        "postprocess": 0.6837
+      }
+    }
+  }
+}

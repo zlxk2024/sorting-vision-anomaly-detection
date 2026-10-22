@@ -1,8 +1,0 @@
-path: /Users/lixing.guo/Documents/机械臂/datasets/sorting_video_bootstrap
-train: images/train
-val: images/val
-
-names:
-  0: parcel
-  1: gate_open
-  2: gate_closed

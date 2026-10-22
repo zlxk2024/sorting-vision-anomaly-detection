@@ -1,123 +1,113 @@
-import io
 import json
+import subprocess
 import tempfile
 import threading
 import unittest
+import urllib.error
+import urllib.request
 from pathlib import Path
-from urllib.error import HTTPError
-from urllib.request import Request, urlopen
 
-import numpy as np
-
-from parcel_vision.api import (
-    PROTOCOL_LOCATION_FIELDS,
-    ParcelLocationService,
-    create_server,
-)
-from parcel_vision.api_client import locate_file
-from parcel_vision.demo import make_synthetic_scene
-from parcel_vision.pipeline import ParcelVisionConfig
+from sorting_vision.api import create_server
+from sorting_vision.inference import ARTIFACTS
 
 
-class ParcelVisionAPITests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.points, _ = make_synthetic_scene()
-        service = ParcelLocationService(
-            ParcelVisionConfig(grid_size=5.0, plane_ransac_iterations=100)
-        )
-        cls.server = create_server("127.0.0.1", 0, service, max_upload_bytes=32 * 1024 * 1024)
-        cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
-        cls.thread.start()
-        cls.base_url = f"http://127.0.0.1:{cls.server.server_port}"
+class APITests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.calls = []
+        self.block = None
+        self.started = threading.Event()
+        self.runner_error = None
+        def runner(video, output, **kwargs):
+            self.calls.append((video, output))
+            if self.runner_error:
+                raise self.runner_error
+            if self.block is not None:
+                self.started.set()
+                self.block.wait(timeout=5)
+            for name in ARTIFACTS.values():
+                (output / name).write_bytes(b"[]" if name.endswith(".json") else b"artifact")
+            return {"status": "completed", "frame_count": 2, "event_count": 0, "events": []}
+        self.server = create_server("127.0.0.1", 0, Path(self.temp.name), api_key="test-key", runner=runner)
+        self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
+        self.thread.start()
+        self.url = f"http://127.0.0.1:{self.server.server_port}"
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.server.shutdown()
-        cls.server.server_close()
-        cls.thread.join(timeout=2)
+    def tearDown(self):
+        self.server.shutdown()
+        self.thread.join()
+        self.server.server_close()
+        self.temp.cleanup()
 
-    def test_health_endpoint(self):
-        with urlopen(f"{self.base_url}/health", timeout=5) as response:
-            payload = json.loads(response.read())
-        self.assertEqual("ok", payload["status"])
+    def request(self, route, body=None, **headers):
+        return urllib.request.urlopen(urllib.request.Request(
+            self.url + route, data=body, headers={"Authorization": "Bearer test-key", **headers}), timeout=10)
 
-    def test_npy_upload_returns_document_protocol(self):
-        buffer = io.BytesIO()
-        np.save(buffer, self.points)
-        request = Request(
-            f"{self.base_url}/v1/package-location?device=arm2&transaction_id=tx-api-1",
-            data=buffer.getvalue(),
-            headers={
-                "Content-Type": "application/octet-stream",
-                "X-Filename": "frame.npy",
-            },
-            method="POST",
-        )
-        with urlopen(request, timeout=20) as response:
-            payload = json.loads(response.read())
+    def test_health_and_upload_result_artifacts(self):
+        with self.request("/health") as response:
+            self.assertEqual("ok", json.load(response)["status"])
+        with self.request("/v1/analyze-video", b"test-video", **{"X-Filename": "../../clip.mp4"}) as response:
+            result = json.load(response)
+        self.assertEqual(1, len(self.calls))
+        self.assertEqual("input.mp4", self.calls[0][0].name)
+        with self.request(f"/v1/jobs/{result['job_id']}") as response:
+            self.assertEqual(result, json.load(response))
+        with self.request(result["artifacts"]["video"]) as response:
+            self.assertEqual(b"artifact", response.read())
+        with self.assertRaises(urllib.error.HTTPError) as error:
+            self.request(f"/v1/jobs/{result['job_id']}/artifacts/inference_log")
+        self.assertEqual(404, error.exception.code)
 
-        self.assertEqual("success", payload["svc_cont"]["message"]["status"])
-        self.assertEqual("package_location", payload["tcp_cont"]["service_type"])
-        self.assertEqual("tx-api-1", payload["tcp_cont"]["transaction_id"])
-        data = payload["svc_cont"]["message"]["data"]
-        self.assertEqual(3, len(data))
-        self.assertTrue(all(item["device"] == "arm2" for item in data))
-        self.assertEqual(PROTOCOL_LOCATION_FIELDS, set(data[0]["location"]))
+    def test_authentication_is_required_for_jobs(self):
+        with self.assertRaises(urllib.error.HTTPError) as error:
+            urllib.request.urlopen(urllib.request.Request(self.url + "/v1/analyze-video", data=b"x"))
+        self.assertEqual(401, error.exception.code)
+        self.assertEqual([], self.calls)
 
-    def test_json_points_can_return_extensions_and_transform(self):
-        payload = {
-            "points": self.points.tolist(),
-            "device": "arm1",
-            "include_extensions": True,
-            "camera_to_robot": [
-                [1, 0, 0, 100],
-                [0, 1, 0, -50],
-                [0, 0, 1, 20],
-                [0, 0, 0, 1],
-            ],
-        }
-        request = Request(
-            f"{self.base_url}/v1/package-location",
-            data=json.dumps(payload).encode(),
-            headers={"Content-Type": "application/json"},
-            method="POST",
-        )
-        with urlopen(request, timeout=20) as response:
-            result = json.loads(response.read())
+    def test_invalid_video_extension_is_rejected(self):
+        with self.assertRaises(urllib.error.HTTPError) as error:
+            self.request("/v1/analyze-video", b"data", **{"X-Filename": "payload.py"})
+        self.assertEqual(415, error.exception.code)
+        self.assertEqual([], self.calls)
 
-        location = result["svc_cont"]["message"]["data"][0]["location"]
-        self.assertIn("object_id", location)
-        self.assertIn("score", location)
-        self.assertEqual("robot", result["svc_cont"]["message"]["meta"]["coordinate_system"])
+    def test_traversal_and_unknown_job_are_rejected(self):
+        for route in ["/v1/jobs/../models", "/v1/jobs/" + "0" * 32]:
+            with self.assertRaises(urllib.error.HTTPError) as error:
+                self.request(route)
+            self.assertEqual(404, error.exception.code)
 
-    def test_multipart_client_upload(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "frame.npy"
-            np.save(path, self.points)
-            result = locate_file(
-                f"{self.base_url}/v1/package-location",
-                path,
-                transaction_id="tx-multipart-1",
-                include_extensions=True,
-            )
+    def test_upload_limit_is_enforced_before_inference(self):
+        with self.assertRaises(urllib.error.HTTPError) as error:
+            self.request("/v1/analyze-video", b"x", **{"Content-Length": str(257 * 1024 * 1024)})
+        self.assertEqual(413, error.exception.code)
+        self.assertEqual([], self.calls)
 
-        self.assertEqual("tx-multipart-1", result["tcp_cont"]["transaction_id"])
-        self.assertEqual(3, result["svc_cont"]["message"]["meta"]["parcel_count"])
+    def test_timeout_releases_inference_slot(self):
+        self.runner_error = subprocess.TimeoutExpired("inference", 1)
+        with self.assertRaises(urllib.error.HTTPError) as error:
+            self.request("/v1/analyze-video", b"video")
+        self.assertEqual(504, error.exception.code)
+        self.runner_error = None
+        with self.request("/v1/analyze-video", b"video") as response:
+            self.assertEqual("completed", json.load(response)["status"])
 
-    def test_unsupported_upload_returns_protocol_error(self):
-        request = Request(
-            f"{self.base_url}/v1/package-location",
-            data=b"not a cloud",
-            headers={"X-Filename": "frame.exe"},
-            method="POST",
-        )
-        with self.assertRaises(HTTPError) as raised:
-            urlopen(request, timeout=5)
-        payload = json.loads(raised.exception.read())
-        self.assertEqual(415, raised.exception.code)
-        self.assertEqual("failed", payload["svc_cont"]["message"]["status"])
-        self.assertEqual("unsupported_format", payload["svc_cont"]["message"]["error_code"])
+    def test_concurrent_inference_is_rejected(self):
+        self.block = threading.Event()
+        result = []
+        def first_request():
+            with self.request("/v1/analyze-video", b"video") as response:
+                result.append(response.status)
+        thread = threading.Thread(target=first_request)
+        thread.start()
+        try:
+            self.assertTrue(self.started.wait(timeout=5))
+            with self.assertRaises(urllib.error.HTTPError) as error:
+                self.request("/v1/analyze-video", b"second-video")
+            self.assertEqual(429, error.exception.code)
+        finally:
+            self.block.set()
+            thread.join(timeout=5)
+        self.assertEqual([200], result)
 
 
 if __name__ == "__main__":

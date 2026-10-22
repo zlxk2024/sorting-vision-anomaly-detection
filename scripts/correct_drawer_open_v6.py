@@ -5,7 +5,7 @@ import shutil
 from PIL import Image, ImageDraw, ImageFont
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
+ROOT = Path(__file__).resolve().parents[1]
 SOURCE = (
     ROOT
     / "datasets/sorting_yolo_stage1/m3_prelabels_10/"

@@ -4,8 +4,8 @@ import subprocess
 from pathlib import Path
 
 
-VIDEO = Path("/Users/lixing.guo/Desktop/异常检测视频/快递分类视频.mp4")
-OUT_ROOT = Path("/Users/lixing.guo/Documents/机械臂/datasets/sorting_yolo_stage1")
+VIDEO = (Path(__file__).resolve().parents[1] / "data/videos/快递分类视频.mp4")
+OUT_ROOT = (Path(__file__).resolve().parents[1] / "datasets/sorting_yolo_stage1")
 IMAGES_DIR = OUT_ROOT / "images" / "to_label"
 LABELS_DIR = OUT_ROOT / "labels" / "to_label"
 META_CSV = OUT_ROOT / "frame_manifest.csv"
@@ -97,7 +97,6 @@ def write_dataset_files(rows):
 
     DATA_YAML.write_text(
         "\n".join([
-            f"path: {OUT_ROOT}",
             "train: images/train",
             "val: images/val",
             "test: images/test",

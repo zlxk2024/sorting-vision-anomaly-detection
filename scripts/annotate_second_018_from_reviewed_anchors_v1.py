@@ -9,7 +9,7 @@ from scipy.optimize import linear_sum_assignment
 import numpy as np
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
+ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "datasets/sorting_yolo_stage1/all_video_frames"
 OUTPUT = ROOT / "datasets/sorting_yolo_stage1/batches/second_018"
 ANCHOR_SCRIPT = ROOT / "scripts/annotate_gpt56_sol_20_v1.py"

@@ -1,5 +1,0 @@
-parcel
-drawer_open
-drawer_closed
-chute
-bag

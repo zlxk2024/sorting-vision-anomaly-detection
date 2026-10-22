@@ -14,7 +14,7 @@ import requests
 from PIL import Image, ImageDraw, ImageFont
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
+ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = ROOT / "datasets/sorting_yolo_stage1/images/to_label"
 OUTPUT = (
     ROOT

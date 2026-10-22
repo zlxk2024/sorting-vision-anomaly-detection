@@ -1,1 +1,0 @@
-/Users/lixing.guo/Documents/机械臂/datasets/sorting_yolo_stage1/batches/second_022/labels_yolo/frame_000690.txt

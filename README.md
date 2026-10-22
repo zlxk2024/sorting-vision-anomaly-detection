@@ -1,227 +1,134 @@
-# 快递分拣视觉异常检测系统
+# 快递分拣视频异常检测
 
-本仓库汇总快递分拣视觉项目的代码、技术文档、YOLO 标注数据、模型权重、
-推理结果和评估材料。仓库默认设为私有，用于现场方案验证与后续工程交付。
+输入 RGB 视频，使用 **YOLO11n V2 + ByteTrack + V1 时序规则**识别包裹、抽屉、闸口等对象，输出不掉件、飘格、一车两件、滞留的视觉异常候选。
 
-## 视觉异常检测目标
+本仓库提供可部署的离线视频分析程序和 HTTP 调用接口，包含 V2 `.pt`、`.onnx` 模型。当前为 PoC 版本；实体检测指标不能代替异常事件验收，Horus 相机接入仍是工程骨架。
 
-系统通过现场摄像机视频识别 `parcel`、`drawer_open`、`drawer_closed`、
-`chute` 和 `bag`，结合目标跟踪、时间窗口及 PLC 事件判断：
+## 1. 克隆并取得模型
 
-1. 开门不掉件：门已打开，包裹超过正常时间仍停留在抽屉；
-2. 飘格/掉错格口：包裹实际落入位置与 PLC 目标闸口不一致；
-3. 一车两件：同一抽屉内同时存在两个及以上包裹；
-4. 失速/滞留：包裹长时间停留在闸口或滑落路径上。
-
-## 仓库结构
-
-- `scripts/`：抽帧、标注、训练、推理、跟踪和异常事件判断脚本；
-- `datasets/`：YOLO 数据集、统一标注规范和新机位补充数据；
-- `runs/`、`outputs/`：训练权重、推理视频和实验结果；
-- `docs/`：架构、硬件、评估及数据集说明；
-- `evaluation/`：异常检测评估工具；
-- `parcel_vision/`：快递点云定位原型；
-- `reports/`：测试报告、对比图和客户演示材料。
-
-关键文档：
-
-- [数据标注统一标准](datasets/sorting_yolo_stage1/ANNOTATION_STANDARD_v1.md)
-- [数据集说明](docs/DATASET_CARD.md)
-- [异常检测评估框架](docs/快递分拣视觉模型与异常检测系统评估体系_V1.0.md)
-
-二进制数据、视频和模型由 Git LFS 管理。克隆后执行：
+仓库当前为私有，部署者需要仓库访问权限。先在本机安装 Git LFS，然后执行：
 
 ```bash
-git lfs pull
+git lfs install
+git clone https://github.com/zlxk2024/sorting-vision-anomaly-detection.git
+cd sorting-vision-anomaly-detection
+git lfs pull --include="models/*"
+python3 scripts/verify_project.py
 ```
 
-## YOLO 数据与训练
+校验只依赖 Python 标准库；如果模型还是 LFS 指针文件，会明确提示重新下载。模型与哈希见 [models/manifest.json](models/manifest.json)。
 
-类别顺序固定为：
+## 2. Python 部署
 
-```text
-0 parcel
-1 drawer_open
-2 drawer_closed
-3 chute
-4 bag
-```
-
-正式训练前应查看每个数据目录的 `manifest.csv` 或 `README.md`，只合并已经
-人工确认或视觉复核通过的样本。首轮预标注数据不能未经复核直接进入生产训练集。
-
----
-
-## 传送带快递点云定位原型
-
-这个程序把3D相机输出的XYZ点云转换为多个快递的抓取坐标，并生成“3D相机识别位置通用协议”中的 `package_location` JSON。
-
-处理流程：RANSAC拟合传送带平面、生成5毫米高度图、形态学修复、连通域分割、最小面积矩形测量、吸取点评分、相机到机械臂坐标转换。
-
-## HTTP 服务
-
-启动对外接口：
+推荐 Python 3.11，支持声明为 Python 3.10 及以上。CPU 环境示例：
 
 ```bash
-python3 -m parcel_vision.api \
-  --host 0.0.0.0 \
-  --port 8080 \
-  --config parcel_vision.example.json \
-  --transform calibration.example.json
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -e .
+python scripts/verify_project.py
 ```
 
-上传点云并获取协议坐标：
+NVIDIA GPU 环境先自行安装匹配 CUDA 的 PyTorch/torchvision，再安装本项目；CLI/API 使用 `--device 0`。macOS 使用系统支持的 PyTorch 安装方式，不使用上面的 Linux CPU wheel 源即可。
+
+### 命令行分析视频
+
+视频由调用者提供，不需要训练数据：
 
 ```bash
-python3 -m parcel_vision.api_client \
-  reports/generated_irregular_parcels/irregular_parcels.ply \
-  --url http://127.0.0.1:8080/v1/package-location \
-  --device arm1
+python scripts/detect_sorting_events_v1.py \
+  --video /path/to/input.mp4 \
+  --output runs/my-video --device cpu
 ```
 
-接口地址为 `POST /v1/package-location`，健康检查为 `GET /health`。完整字段、curl 示例、错误码和 Docker 部署方法见 [API.md](API.md)。
+默认使用 `models/sorting_yolo11n_v2_mixed_best.pt`，规则版本为 V1。输出：
 
-## 快速运行
+- `events_v1.json` / `events_v1.csv`：异常候选与开始/结束时间、轨迹 ID、证据。
+- `detections_v1.json`：逐帧检测框、类别、置信度和轨迹 ID。
+- `sorting_events_v1.mp4`：叠加检测框和异常提示的视频。
 
-识别核心依赖 Python 3.9、NumPy 和 SciPy；生成对比图还需要 Matplotlib。运行内置的三个快递仿真场景：
+### 启动 HTTP 服务
 
 ```bash
-python3 -m parcel_vision.cli --demo
+python -m sorting_vision.api --host 127.0.0.1 --port 8080 --data-dir runs/api
 ```
 
-处理实际点云：
+提交视频，接口同步等待分析结束：
 
 ```bash
-python3 -m parcel_vision.cli camera_points.npy --transform calibration.json
+curl --fail --max-time 1900 \
+  -H 'Content-Type: application/octet-stream' \
+  -H 'X-Filename: input.mp4' \
+  --data-binary @/path/to/input.mp4 \
+  http://127.0.0.1:8080/v1/analyze-video
 ```
 
-支持 `NPY`、`NPZ`、`XYZ/TXT`、`CSV`、MATLAB `MAT`、PCD 和 ASCII `PLY`。所有输入距离默认使用毫米。
+需要鉴权时，在启动服务前设置 `SORTING_API_KEY`，请求增加 `Authorization: Bearer <your-key>`。跨主机访问请使用 `--host 0.0.0.0`，配置该密钥并通过现有 HTTPS 网关暴露服务。默认 Compose 只发布到本机回环地址。
 
-相机到机械臂的标定文件格式：
+## 3. Docker 部署（CPU）
 
-```json
-{
-  "camera_to_robot": [
-    [1, 0, 0, 100],
-    [0, 1, 0, -50],
-    [0, 0, 1, 20],
-    [0, 0, 0, 1]
-  ]
-}
-```
-
-运行测试：
+确认 `git lfs pull` 和模型校验通过后：
 
 ```bash
-python3 -m unittest discover -s tests -v
+docker compose up -d --build
+curl --fail http://127.0.0.1:8080/health
 ```
 
-运行100帧高拟真随机压力测试并生成误差报告：
+默认端口 8080，任务和输出保存在宿主机 `runs/api/`。如需鉴权，启动 Compose 前设置 `SORTING_API_KEY` 环境变量。镜像构建会校验模型，避免把 LFS 指针当成权重。
 
-```bash
-python3 -m parcel_vision.stress --scenes 100
-```
+Dockerfile 安装 CPU 版 PyTorch；GPU 部署请按目标 CUDA 环境调整基础镜像和运行参数。Docker 构建首次需要联网下载依赖。
 
-报告写入 `reports/stress_report.md` 和 `reports/stress_report.json`。
+## 4. 调用接口
 
-验证公开真实点云：
+| 方法 | 路径 | 功能 |
+|---|---|---|
+| GET | `/health` | 健康检查，不要求密钥 |
+| POST | `/v1/analyze-video` | 上传视频二进制并同步分析 |
+| GET | `/v1/jobs/{job_id}` | 读取完成任务结果 |
+| GET | `/v1/jobs/{job_id}/artifacts/{name}` | 下载 events、events_csv、detections 或 video |
 
-```bash
-python3 -m parcel_vision.public_eval data/public/pcl_table_scene_lms400.pcd
-```
+详细请求、响应、错误码和 Python 调用示例见 [API.md](API.md)。一次最多分析一个视频；忙时返回 429，默认上传限制 256 MiB、推理超时 1,800 秒，均可通过启动参数调整。没有后台排队、自动重试或断点续传。
 
-用三个公开真实 RGB-D 纸箱表面构造传送带场景并评估：
-
-```bash
-python3 -m parcel_vision.real_object_eval \
-  data/public/rgbd-dataset/cereal_box/cereal_box_1/cereal_box_1_4_1.pcd \
-  data/public/rgbd-dataset/cereal_box/cereal_box_1/cereal_box_1_4_30.pcd \
-  data/public/rgbd-dataset/cereal_box/cereal_box_1/cereal_box_1_4_120.pcd \
-  --output reports/real_object_composite_top_views
-```
-
-这项测试使用真实相机采集的物体表面，但传送带平面和纸箱摆放位置是合成的。结果与适用边界见 `reports/real_rgbd_attempt.md`。
-
-生成原始点云与预测结果对比图，并导出 CloudCompare 彩色点云：
-
-```bash
-python3 -m parcel_vision.visualize \
-  reports/real_object_composite_top_views/real_cereal_box_composite.npy \
-  --morphology-radius 8 \
-  --output reports/visualization
-```
-
-输出包括俯视对比图、3D 对比图和带预测包围框/中心/吸取点的彩色 PLY。
-
-生成一帧带纸箱、软袋、相机噪声、缺点和离群点的高拟真点云：
-
-```bash
-python3 -m parcel_vision.generate_scene \
-  --seed 20260717 \
-  --count 10 \
-  --output reports/generated_realistic_scene
-```
-
-该命令同时保存原始 `PLY/NPY`、真实坐标、预测坐标、误差结果和对比图。它是传感器仿真数据，不替代现场相机采集。
-
-生成10件三层相互遮挡、接触和堆叠的复杂场景：
-
-```bash
-python3 -m parcel_vision.stacked_scene \
-  --output reports/generated_stacked_10_parcels
-```
-
-该场景采用俯视深度遮挡，只保留相机能看到的最高表面，主要用于检验贴合和堆叠条件下的欠分割问题。
-
-生成大小不一、轮廓不规则并带局部叠压的俯视点云：
-
-```bash
-python3 -m parcel_vision.irregular_scene \
-  --output reports/generated_irregular_parcels
-```
-
-生成客户演示视频：
-
-```bash
-python3 -m parcel_vision.client_demo_video \
-  --output reports/client_demo/parcel_vision_demo.mp4
-```
-
-综合验证结论见 `reports/verification_summary.md`。
-
-## 现场接入
-
-相机SDK只需产生形状为 `(N, 3)` 的 NumPy 数组，并调用：
+Python 本地调用：
 
 ```python
-from parcel_vision import ParcelVisionPipeline
+from pathlib import Path
+from sorting_vision.inference import run_video
 
-detections = ParcelVisionPipeline().process(points_xyz, camera_to_robot)
+result = run_video(Path('/path/to/input.mp4'), Path('runs/python-call'))
+print(result['events'])
 ```
 
-当前版本适用于摊平后、快递之间存在可见间隙的场景。软包严重粘连、上下叠放时，应增加RGB实例分割结果作为每件快递的掩码；几何连通域本身无法可靠区分完全贴合且同高的两个物体。
+## 5. 目录和训练边界
 
-上游实例分割模型输出 `K x H x W` 掩码后，可直接与对齐深度图融合：
+| 路径 | 内容 |
+|---|---|
+| `sorting_vision/` | HTTP 服务、进程隔离调用和模型校验 |
+| `scripts/` | 视频分析，以及历史数据准备、标注、训练、评估脚本 |
+| `models/` | V2 权重、ONNX 和哈希清单 |
+| `deploy/horus_rv1126b/` | ONNX/RKNN 转换、C++ 模拟状态机、相机接入说明 |
+| `docs/` | 模型报告、标注规范、评估体系、部署验证记录 |
+| `evaluation/` | 事件真值与验收结果模板 |
+| `tests/` | HTTP 合约和错误处理测试 |
 
-```python
-from parcel_vision import CameraIntrinsics, ParcelVisionPipeline
-from parcel_vision.rgbd import rgbd_instance_masks_to_detections
+本次发布不包含现场视频、图片/标签、历史运行输出、报价、旧点云/机械臂代码或凭据。旧版内容保留在 Git 历史中，当前版本没有重写历史。
 
-detections = rgbd_instance_masks_to_detections(
-    depth_mm,
-    instance_masks,
-    CameraIntrinsics(fx=900, fy=900, cx=640, cy=360),
-    ParcelVisionPipeline(),
-)
-```
+推理与 HTTP 调用不需要训练数据。**重新训练需要另行提供经复核的数据和 V1 初始化权重**；`train_sorting_yolo_v2.py` 沿用历史路径 `datasets/sorting_yolo_v2_mixed/data.yaml` 和 `runs/sorting_yolo/sorting_yolo11n_v1/weights/best.pt`。数据准备脚本是研发材料，不应直接对现有数据执行。早期三类与小样本标注脚本不是正式五类训练入口。
 
-纯点云堆叠基线可使用高度突变分割：
+`.[annotation]`、`.[documents]`、`.[export]` 分别提供模型辅助预标注、Word 生成、ONNX 导出附加依赖；历史抽帧脚本需要系统 ffmpeg。模型辅助预标注会调用外部 API，只有显式运行并配置凭据时才使用。
 
-```bash
-python3 -m parcel_vision.cli camera_points.pcd \
-  --segmentation-method height_edges \
-  --height-edge-threshold 12 \
-  --min-detection-score 0.75
-```
+## 6. 能力与验证
 
-该模式输出的是可见表面候选，不代表被遮挡快递的完整轮廓。机械臂应按 `grasp_plan.json` 每次只抓一个可用候选，并在抓取后重新拍照。
+固定类别顺序：`0 parcel`、`1 drawer_open`、`2 drawer_closed`、`3 chute`、`4 bag`。V2 历史测试 mAP@0.5 为 0.894；新场景包裹 Precision 0.574、关闭抽屉 Recall 0.480，仍需优化。
+
+当前算法先完成视频推理，再统一分析异常；不是实时多路 RTSP 告警平台。缺少 PLC/WCS 目标格口时，飘格仅是视觉候选。完整限制见 [KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md)。
+
+- [部署与真实模型验证](docs/DEPLOYMENT_VERIFICATION.md)
+- [V2 训练与评估报告](docs/YOLO_V2_模型训练与评估报告_2026-07-29.md)
+- [标注标准](docs/ANNOTATION_STANDARD_v1.md)
+- [评估体系](docs/快递分拣视觉模型与异常检测系统评估体系_V1.0.md)
+- [模型信息与使用许可说明](models/README.md)
+
+运行接口测试：`python -m unittest discover -s tests -v`。第三方依赖和模型沿用各自许可，本次未将项目声明为自由使用的开源授权。

@@ -6,12 +6,14 @@ import torch
 from ultralytics import YOLO
 
 
-ROOT = Path("/Users/lixing.guo/Documents/机械臂")
+ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "datasets/sorting_yolo_stage1/yolo_dataset_v1/data.yaml"
 PROJECT = ROOT / "runs/sorting_yolo"
 
 
 def main() -> None:
+    if not DATA.is_file():
+        raise FileNotFoundError("Training dataset is not included in this deployment repository")
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     print(f"training device: {device}")
     model = YOLO("yolo11n.pt")

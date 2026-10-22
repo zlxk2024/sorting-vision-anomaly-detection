@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "model": "YOLO11n-V2",
+  "input_frames": 60,
+  "detections": 280,
+  "tracked_ids_present": true,
+  "event_count": 0,
+  "annotated_video_frames": 60,
+  "download_bytes": 2094590,
+  "model_artifacts": [
+    {
+      "filename": "sorting_yolo11n_v2_mixed_best.onnx",
+      "sha256": "2228b1e90b4974629ee3b7d3fe88758a0cc69ed84ffbb9189ad8b08c14decef5",
+      "bytes": 10481171
+    },
+    {
+      "filename": "sorting_yolo11n_v2_mixed_best.pt",
+      "sha256": "21c348d718e36fd5693f4192054a82a042c2f344ffede474df9607fe3390909b",
+      "bytes": 5449809
+    }
+  ],
+  "scope": "Real local model, HTTP upload, ByteTrack, rules, JSON retrieval and playable annotated-video download; no accuracy or production acceptance claim."
+}
