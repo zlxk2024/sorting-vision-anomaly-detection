@@ -107,13 +107,13 @@ print(result['events'])
 
 | 路径 | 内容 |
 |---|---|
-| `sorting_vision/` | HTTP 服务、进程隔离调用和模型校验 |
+| `sorting_vision/` | 离线 HTTP、实时采集/规则、SQL 投递、证据和模型校验 |
 | `scripts/` | 视频分析，以及历史数据准备、标注、训练、评估脚本 |
 | `models/` | V2 权重、ONNX 和哈希清单 |
 | `deploy/horus_rv1126b/` | ONNX/RKNN 转换、C++ 模拟状态机、相机接入说明 |
 | `docs/` | 模型报告、标注规范、评估体系、部署验证记录 |
 | `evaluation/` | 事件真值与验收结果模板 |
-| `tests/` | HTTP 合约和错误处理测试 |
+| `tests/` | 离线/实时 API、持续时间规则、采集队列和数据库投递测试 |
 
 本次发布不包含现场视频、图片/标签、历史运行输出、报价、旧点云/机械臂代码或凭据。旧版内容保留在 Git 历史中，当前版本没有重写历史。
 
@@ -125,8 +125,9 @@ print(result['events'])
 
 固定类别顺序：`0 parcel`、`1 drawer_open`、`2 drawer_closed`、`3 chute`、`4 bag`。V2 历史测试 mAP@0.5 为 0.894；新场景包裹 Precision 0.574、关闭抽屉 Recall 0.480，仍需优化。
 
-当前算法先完成视频推理，再统一分析异常；不是实时多路 RTSP 告警平台。缺少 PLC/WCS 目标格口时，飘格仅是视觉候选。完整限制见 [KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md)。
+离线入口先完成视频推理，再统一分析异常；新增实时入口持续读取 RTSP，使用按秒和归一化坐标的增量规则，经本地 outbox 写入数据库。当前已验证一路，多路吞吐和完整班次稳定性需在目标工控机验收。缺少 PLC/WCS 目标格口时，飘格仅是视觉候选。完整限制见 [KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md)。
 
+- [摄像头实时检测与入库验证](docs/REALTIME_VERIFICATION.md)
 - [Docker 实际部署与性能报告](docs/DOCKER_PERFORMANCE_2026-10-22.md)
 - [部署与真实模型验证](docs/DEPLOYMENT_VERIFICATION.md)
 - [V2 训练与评估报告](docs/YOLO_V2_模型训练与评估报告_2026-07-29.md)
@@ -134,4 +135,4 @@ print(result['events'])
 - [评估体系](docs/快递分拣视觉模型与异常检测系统评估体系_V1.0.md)
 - [模型信息与使用许可说明](models/README.md)
 
-运行接口测试：`python -m unittest discover -s tests -v`。第三方依赖和模型沿用各自许可，本次未将项目声明为自由使用的开源授权。
+安装项目依赖后运行测试：`python -m unittest discover -s tests -v`。第三方依赖和模型沿用各自许可，本次未将项目声明为自由使用的开源授权。

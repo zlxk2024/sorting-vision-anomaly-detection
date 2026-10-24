@@ -56,4 +56,4 @@
 
 - [x] Document configuration, ROI calibration, schema ownership and remaining field acceptance.
 - [x] Build/run the real Docker service; retain only technical test results in Git.
-- [ ] Review upload scope, push normally, and verify remote commit and fresh clone checks.
+- [x] Review upload scope, push normally, and verify remote commit and fresh clone checks.
