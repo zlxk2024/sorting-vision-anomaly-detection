@@ -5,7 +5,7 @@
 ## 环境和输入
 
 - Apple M1 / 8 GB；Docker Desktop Linux ARM64，分配 8 CPU / 约 3.827 GiB。
-- 本仓库 CPU Dockerfile，YOLO11n V2 `.pt`，推理尺寸 320，ByteTrack。
+- 本仓库 CPU Dockerfile，YOLO11n V2 `.pt`，推理尺寸 320，ByteTrack。实际依赖快照见 [realtime-python-freeze-2026-10-24.txt](realtime-python-freeze-2026-10-24.txt)。
 - FFmpeg 将一张真实分拣图像以 720×1280 / 10 FPS、H.264、1 秒关键帧间隔发布到临时 MediaMTX；服务通过 TCP RTSP 接入。
 - 为验证事件通路，将整个画面设为一个闸口 ROI、规则置信度设为 0.2。固定画面中的包裹应触发 `chute_stall`。
 - 这是受控静止场景；不作为真实产线异常准确率、漏检率或错分准确率证据。测试视频、图片、随机密码均未入 Git。
