@@ -1,0 +1,49 @@
+# Credentials and URLs belong in environment variables, never in this file.
+site_id: site-01
+model:
+  weights: models/sorting_yolo11n_v2_mixed_best.pt
+  device: cpu
+  image_size: 320
+  confidence: 0.15
+database:
+  url_env: SORTING_DATABASE_URL
+  create_tables: true
+storage:
+  directory: runs/realtime
+  pre_seconds: 2
+  post_seconds: 2
+  max_buffer_frames: 90
+  max_recorders: 4
+  output_fps: 10
+  evidence_width: 640
+  min_free_mb: 256
+http:
+  host: 0.0.0.0
+  port: 8081
+  api_key_env: SORTING_API_KEY
+rules:
+  open_no_drop_seconds: 1.0
+  stall_seconds: 1.2
+  multi_seconds: 0.25
+  wrong_chute_seconds: 0.15
+  clear_seconds: 0.4
+  max_gap_seconds: 2.0
+  track_ttl_seconds: 8.0
+  stationary_distance: 0.025
+  min_confidence: 0.35
+cameras:
+  - id: camera-01
+    enabled: true
+    source_env: SORTING_CAMERA_1_URL
+    open_timeout_seconds: 5
+    read_timeout_seconds: 5
+    reconnect_seconds: 1
+    max_reconnect_seconds: 15
+    max_frame_age_seconds: 2
+    file_realtime: true
+    loop_file: false
+    # EXAMPLES ONLY: calibrate these normalized [x1,y1,x2,y2] boxes onsite.
+    regions:
+      - {id: drawer-01, kind: drawer, box: [0.0, 0.05, 1.0, 0.40]}
+      - {id: chute-01, kind: chute, box: [0.0, 0.40, 0.5, 0.75]}
+      - {id: chute-02, kind: chute, box: [0.5, 0.40, 1.0, 0.75]}

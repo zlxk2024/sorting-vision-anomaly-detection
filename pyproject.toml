@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sorting-vision-anomaly-detection"
-version = "0.2.0"
+version = "0.3.0"
 description = "Parcel sorting video detection, tracking and anomaly research project"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -19,4 +19,4 @@ export = ["onnx>=1.16,<2", "onnxslim>=0.1,<1", "onnxruntime>=1.18,<2"]
 packages = ["sorting_vision"]
 
 [tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
+dependencies = {file = ["requirements.txt", "requirements-realtime.txt"]}

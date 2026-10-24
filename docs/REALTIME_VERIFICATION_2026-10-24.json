@@ -1,0 +1,247 @@
+{
+  "ready_initial": {
+    "status": "ok",
+    "ready": true,
+    "mode": "live-camera",
+    "cameras": [
+      {
+        "state": "online",
+        "frames_captured": 44,
+        "frames_dropped": 36,
+        "reconnects": 0,
+        "last_frame_at": "2026-10-24T04:35:21.612+00:00",
+        "camera_id": "camera-01",
+        "worker_alive": true,
+        "frames_processed": 6,
+        "stale_frames": 0,
+        "analysis_fps": 8.1,
+        "last_inference_seconds": 0.1138,
+        "error_code": null,
+        "processed_age_seconds": 0.061
+      }
+    ],
+    "database": {
+      "pending": 0,
+      "error_code": null,
+      "last_success": "2026-10-24T04:35:21.273+00:00",
+      "writer_alive": true
+    }
+  },
+  "initial_event_count": 4,
+  "event_type": "chute_stall",
+  "snapshot_bytes": 78726,
+  "clip_bytes": 196512,
+  "steady_state": {
+    "status": "ok",
+    "ready": true,
+    "mode": "live-camera",
+    "cameras": [
+      {
+        "state": "online",
+        "frames_captured": 244,
+        "frames_dropped": 66,
+        "reconnects": 0,
+        "last_frame_at": "2026-10-24T04:35:41.593+00:00",
+        "camera_id": "camera-01",
+        "worker_alive": true,
+        "frames_processed": 177,
+        "stale_frames": 0,
+        "analysis_fps": 8.522,
+        "last_inference_seconds": 0.0828,
+        "error_code": null,
+        "processed_age_seconds": 0.07
+      }
+    ],
+    "database": {
+      "pending": 1,
+      "error_code": null,
+      "last_success": "2026-10-24T04:35:41.358+00:00",
+      "writer_alive": true
+    }
+  },
+  "measured_fps": 8.539605378851423,
+  "stream_down": {
+    "status": "degraded",
+    "ready": false,
+    "mode": "live-camera",
+    "cameras": [
+      {
+        "state": "reconnecting",
+        "frames_captured": 253,
+        "frames_dropped": 73,
+        "reconnects": 1,
+        "last_frame_at": "2026-10-24T04:35:41.801+00:00",
+        "camera_id": "camera-01",
+        "worker_alive": true,
+        "frames_processed": 179,
+        "stale_frames": 0,
+        "analysis_fps": 8.736,
+        "last_inference_seconds": 0.0886,
+        "error_code": null,
+        "processed_age_seconds": 0.025
+      }
+    ],
+    "database": {
+      "pending": 0,
+      "error_code": null,
+      "last_success": "2026-10-24T04:35:41.778+00:00",
+      "writer_alive": true
+    }
+  },
+  "stream_recovered": {
+    "status": "ok",
+    "ready": true,
+    "mode": "live-camera",
+    "cameras": [
+      {
+        "state": "online",
+        "frames_captured": 291,
+        "frames_dropped": 94,
+        "reconnects": 1,
+        "last_frame_at": "2026-10-24T04:35:47.956+00:00",
+        "camera_id": "camera-01",
+        "worker_alive": true,
+        "frames_processed": 194,
+        "stale_frames": 0,
+        "analysis_fps": 6.292,
+        "last_inference_seconds": 0.1094,
+        "error_code": null,
+        "processed_age_seconds": 0.075
+      }
+    ],
+    "database": {
+      "pending": 0,
+      "error_code": null,
+      "last_success": "2026-10-24T04:35:47.859+00:00",
+      "writer_alive": true
+    }
+  },
+  "database_down": {
+    "status": "degraded",
+    "ready": false,
+    "mode": "live-camera",
+    "cameras": [
+      {
+        "state": "online",
+        "frames_captured": 293,
+        "frames_dropped": 95,
+        "reconnects": 1,
+        "last_frame_at": "2026-10-24T04:35:48.148+00:00",
+        "camera_id": "camera-01",
+        "worker_alive": true,
+        "frames_processed": 196,
+        "stale_frames": 0,
+        "analysis_fps": 6.308,
+        "last_inference_seconds": 0.1721,
+        "error_code": null,
+        "processed_age_seconds": 0.033
+      }
+    ],
+    "database": {
+      "pending": 1,
+      "error_code": "OperationalError",
+      "last_success": "2026-10-24T04:35:47.859+00:00",
+      "writer_alive": true
+    }
+  },
+  "queued_while_database_down": {
+    "status": "degraded",
+    "ready": false,
+    "mode": "live-camera",
+    "cameras": [
+      {
+        "state": "online",
+        "frames_captured": 368,
+        "frames_dropped": 129,
+        "reconnects": 5,
+        "last_frame_at": "2026-10-24T04:36:11.225+00:00",
+        "camera_id": "camera-01",
+        "worker_alive": true,
+        "frames_processed": 236,
+        "stale_frames": 0,
+        "analysis_fps": 2.916,
+        "last_inference_seconds": 0.1086,
+        "error_code": null,
+        "processed_age_seconds": 0.016
+      }
+    ],
+    "database": {
+      "pending": 5,
+      "error_code": "OperationalError",
+      "last_success": "2026-10-24T04:35:47.859+00:00",
+      "writer_alive": true
+    }
+  },
+  "database_and_process_recovered": {
+    "status": "ok",
+    "ready": true,
+    "mode": "live-camera",
+    "cameras": [
+      {
+        "state": "online",
+        "frames_captured": 60,
+        "frames_dropped": 41,
+        "reconnects": 0,
+        "last_frame_at": "2026-10-24T04:36:23.524+00:00",
+        "camera_id": "camera-01",
+        "worker_alive": true,
+        "frames_processed": 17,
+        "stale_frames": 0,
+        "analysis_fps": 8.009,
+        "last_inference_seconds": 0.0782,
+        "error_code": null,
+        "processed_age_seconds": 0.499
+      }
+    ],
+    "database": {
+      "pending": 0,
+      "error_code": null,
+      "last_success": "2026-10-24T04:36:23.386+00:00",
+      "writer_alive": true
+    }
+  },
+  "final_event_count": 10,
+  "unique_ids": 10,
+  "final_statuses": [
+    "open",
+    "open",
+    "interrupted",
+    "interrupted",
+    "interrupted",
+    "interrupted",
+    "interrupted",
+    "interrupted",
+    "interrupted",
+    "interrupted"
+  ],
+  "result": "passed",
+  "environment": {
+    "host": "Apple M1, 8 GB RAM",
+    "docker_vm": "8 CPUs, 3.827 GiB RAM",
+    "platform": "linux/arm64",
+    "model": "YOLO11n V2 PT",
+    "image_size": 320,
+    "input": "720x1280, 10 FPS RTSP, frozen real image published by FFmpeg, GOP 1 second",
+    "scenario": "controlled stationary parcel; chute ROI covers whole frame; not real business accuracy validation",
+    "performance_window_seconds": 20,
+    "unit_tests": 32,
+    "accumulated_test_database": true
+  },
+  "sql_driver_checks": {
+    "postgresql": {
+      "result": "passed",
+      "duplicate_event_rows": 1,
+      "updated_status": "closed",
+      "unicode_json": true,
+      "site_scoped_camera_key": true
+    },
+    "mysql": {
+      "result": "not_verified",
+      "reason": "Official image downloads failed with TLS record/MAC errors; driver implementation exists, no live MySQL claim"
+    }
+  },
+  "docker_unit_tests": {
+    "passed": 32,
+    "seconds": 6.066
+  }
+}

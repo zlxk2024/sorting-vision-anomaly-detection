@@ -2,7 +2,9 @@
 
 输入 RGB 视频，使用 **YOLO11n V2 + ByteTrack + V1 时序规则**识别包裹、抽屉、闸口等对象，输出不掉件、飘格、一车两件、滞留的视觉异常候选。
 
-本仓库提供可部署的离线视频分析程序和 HTTP 调用接口，包含 V2 `.pt`、`.onnx` 模型。当前为 PoC 版本；实体检测指标不能代替异常事件验收，Horus 相机接入仍是工程骨架。
+本仓库提供离线视频分析、摄像头实时检测、异常候选入库和 HTTP 查询接口，包含 V2 `.pt`、`.onnx` 模型。当前为 PoC 版本；实体检测指标不能代替异常事件验收，Horus 相机接入仍是工程骨架。
+
+实时接入：见 [摄像头与数据库部署文档](docs/REALTIME.md) 和 [实时链路验证记录](docs/REALTIME_VERIFICATION.md)。连接信息通过 `.env` 注入，支持 PostgreSQL/MySQL/SQLite；使用 `docker compose -f compose.realtime.yaml up -d --build` 启动前须先配置摄像头、数据库和现场 ROI。
 
 ## 1. 克隆并取得模型
 
