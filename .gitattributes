@@ -1,3 +1,5 @@
 models/*.pt filter=lfs diff=lfs merge=lfs -text
 models/*.onnx filter=lfs diff=lfs merge=lfs -text
 models/*.rknn filter=lfs diff=lfs merge=lfs -text
+
+*.cmd text eol=crlf

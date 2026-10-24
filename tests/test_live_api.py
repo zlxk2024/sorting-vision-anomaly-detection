@@ -32,3 +32,10 @@ class LiveAPITests(unittest.TestCase):
         with self.get('/v1/events') as response:self.assertEqual(1,len(json.load(response)['events']))
         with self.assertRaises(urllib.error.HTTPError) as error:self.get('/v1/events/'+'f'*32)
         self.assertEqual(404,error.exception.code)
+    def test_diagnostic_event_query_reads_committed_rows(self):
+        import os
+        from unittest.mock import patch
+        from sorting_vision.diagnostics import events_probe
+        with patch.dict(os.environ,{'SORTING_API_KEY':'key'}):result=events_probe(self.server.server_port)
+        self.assertTrue(result['passed'])
+        self.assertEqual(self.event['event_id'],result['details']['events'][0]['event_id'])

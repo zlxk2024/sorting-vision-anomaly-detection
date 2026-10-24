@@ -67,7 +67,7 @@ Python 部署：按 README 创建 Python 3.11 环境并 `pip install -e .`，从
 python -m sorting_vision.realtime --config config/realtime.example.yaml
 ```
 
-Python 进程不会自动加载 `.env`，Compose 会通过 `env_file` 加载。裸机部署须用 systemd `EnvironmentFile` 或环境变量注入，设置 storage 为裸机可写路径。设备输入 `0` 可用 OpenCV 默认摄像头；Docker USB 需要另外映射设备，当前验证覆盖 RTSP。
+Python 进程默认不加载 `.env`；可显式添加 `--env-file .env`，Compose 会通过 `env_file` 加载。裸机部署须用 systemd `EnvironmentFile` 或环境变量注入，设置 storage 为裸机可写路径。设备输入 `0` 可用 OpenCV 默认摄像头；Docker USB 需要另外映射设备，当前验证覆盖 RTSP。
 
 ## 3. 异常规则与判断边界
 
@@ -132,3 +132,5 @@ curl --fail -H "Authorization: Bearer $SORTING_API_KEY" \
 证据文件与队列不自动过期删除。根据保留天数由运维安排归档，避免删除还在录制或等待入库的证据；数据库中路径需与归档策略对应。重启不会回填整段停机视频，连续检测从恢复后的最新帧开始。断流自动指数退避重连，默认 1–15 秒，读/开流超时各 5 秒。
 
 部署验收顺序：现场一路实时图像 → 已知正常/异常样本复核 → 数据库事件与证据对照 → 断流/断库/重启恢复 → 目标工控机吞吐、延迟及至少一个完整班次稳定性。当前可复现验证见 [REALTIME_VERIFICATION.md](REALTIME_VERIFICATION.md)。
+
+Windows 原生 GPU 部署与独立检查命令见 [WINDOWS_FIELD_GUIDE.md](WINDOWS_FIELD_GUIDE.md)。

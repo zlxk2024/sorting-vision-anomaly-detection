@@ -6,6 +6,8 @@
 
 实时接入：见 [摄像头与数据库部署文档](docs/REALTIME.md) 和 [实时链路验证记录](docs/REALTIME_VERIFICATION.md)。连接信息通过 `.env` 注入，支持 PostgreSQL/MySQL/SQLite；使用 `docker compose -f compose.realtime.yaml up -d --build` 启动前须先配置摄像头、数据库和现场 ROI。
 
+Windows 工控机 + RTX 3060：见 [远程部署与分阶段测试手册](docs/WINDOWS_FIELD_GUIDE.md)，含 ToDesk/Windows App 对比、取流、GPU 模型、数据库和完整链路检查。
+
 ## 1. 克隆并取得模型
 
 仓库当前为私有，部署者需要仓库访问权限。先在本机安装 Git LFS，然后执行：

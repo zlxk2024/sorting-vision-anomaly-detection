@@ -176,10 +176,14 @@ def create_live_server(app,host,port,key=None):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--config',required=True,type=Path)
+    parser.add_argument('--env-file',type=Path,help='Load a local .env literally; overrides matching process variables')
     parser.add_argument('--check-config',action='store_true');parser.add_argument('--init-db',action='store_true')
     parser.add_argument('--run-seconds',type=float,help='Optional bounded run for integration tests')
     args=parser.parse_args()
-    try:config=load_config(args.config)
+    try:
+        from .runtime_env import load_runtime_env
+        load_runtime_env(args.env_file)
+        config=load_config(args.config)
     except Exception as exc:
         # Validation messages are controlled; avoid emitting parser or URL exception details.
         print(json.dumps({'status':'invalid_config','error_code':type(exc).__name__,

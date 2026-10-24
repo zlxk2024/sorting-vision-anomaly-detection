@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-24",
+  "host": "macOS / Apple M1",
+  "field_windows_verified": false,
+  "field_rtx3060_verified": false,
+  "field_rtsp_verified": false,
+  "business_mysql_write_verified": false,
+  "unit_tests": 42,
+  "camera_check": {
+    "passed": true,
+    "stage": "camera",
+    "input_kind": "local-replay",
+    "decoded_frames": 4007,
+    "elapsed_seconds": 2.0,
+    "width": 960,
+    "height": 544,
+    "snapshot_saved": true
+  },
+  "model_check": {
+    "passed": true,
+    "stage": "model",
+    "device": "cpu",
+    "actual_device": "cpu",
+    "gpu_name": null,
+    "torch_cuda": null,
+    "cold_call_seconds": 1.216,
+    "business_event_accuracy_verified": false,
+    "detection_count": 14
+  },
+  "cuda_unavailable_is_explicit_failure": true,
+  "failed_stream_does_not_print_credentials": true,
+  "crud_rollback_checked_with": "isolated SQLite only",
+  "full_service_env_file_check": {
+    "passed": true,
+    "input": "local video replay, not field RTSP",
+    "runtime": "Linux ARM64 Docker CPU, not Windows CUDA",
+    "env_file_startup": true,
+    "readiness_reached": true,
+    "frames_processed": 44,
+    "sqlite_heartbeat_committed": true
+  },
+  "docker_regression": {
+    "platform": "Linux ARM64 / Python 3.11 / CPU",
+    "passed_tests": 42
+  }
+}
