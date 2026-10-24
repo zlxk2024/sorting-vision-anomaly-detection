@@ -22,7 +22,8 @@ http:
   port: 8081
   api_key_env: SORTING_API_KEY
 rules:
-  open_no_drop_seconds: 1.0
+  # 落格错误（原称飘格）、一车两件/多件混放、格口包裹滞留
+  enabled_event_types: [wrong_chute, multi_parcel_drawer, chute_stall]
   stall_seconds: 1.2
   multi_seconds: 0.25
   wrong_chute_seconds: 0.15

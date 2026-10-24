@@ -24,3 +24,9 @@ class ConfigTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'unique'):self.load(data)
             data=self.config();data['cameras'][0]['regions'][0]['expected_chute_id']='missing'
             with self.assertRaisesRegex(ValueError,'Expected chute'):self.load(data)
+    def test_current_types_default_and_invalid_type_rejected(self):
+        with patch.dict(os.environ,{'SORTING_DATABASE_URL':'sqlite:///test.db','TEST_CAMERA_URL':'rtsp://example.invalid/camera'},clear=True):
+            self.assertEqual(['wrong_chute','multi_parcel_drawer','chute_stall'],self.load(self.config())['rules']['enabled_event_types'])
+            for enabled in [['wrong_chute','wrong_chute'],['unknown'],[],['open_no_drop']]:
+                data=self.config();data['rules']={'enabled_event_types':enabled}
+                with self.assertRaisesRegex(ValueError,'enabled_event_types'):self.load(data)

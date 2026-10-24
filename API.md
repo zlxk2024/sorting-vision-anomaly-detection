@@ -88,3 +88,5 @@ with requests.get(base + result['artifacts']['video'], headers=headers,
 ## 摄像头实时检测与数据库查询
 
 实时服务单独运行在 8081，提供 `/health`、`/ready`、`/v1/cameras`、`/v1/events` 及单条事件的截图/视频片段查询。摄像头、数据库连接使用环境变量，现场区域和规则参数使用 YAML；具体部署、鉴权及返回语义见 [REALTIME.md](docs/REALTIME.md)。原离线上传视频接口保持原有调用方式。
+
+当前新结果默认只输出三类：`wrong_chute`＝落格错误（原称飘格）、`multi_parcel_drawer`＝一车两件/多件混放、`chute_stall`＝格口包裹滞留。实时 payload 的 `event_type_name`、离线事件的 `name` 返回对应中文名称；英文 ID 保持兼容。历史“不掉件”记录仍可查询，新检测默认不再生成该类。

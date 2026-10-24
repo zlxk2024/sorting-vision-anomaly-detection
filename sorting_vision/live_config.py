@@ -2,6 +2,7 @@
 from __future__ import annotations
 import json, math, os, re
 from pathlib import Path
+from .event_types import DEFAULT_EVENT_TYPES
 
 DEFAULT_RULES = dict(open_no_drop_seconds=1.0, stall_seconds=1.2, multi_seconds=0.25,
                      wrong_chute_seconds=0.15, clear_seconds=0.4, max_gap_seconds=2.0,
@@ -43,11 +44,15 @@ def load_config(path):
         raise ValueError('Invalid model settings')
     if not Path(model['weights']).is_file(): raise ValueError('Model file missing; run git lfs pull')
     data['rules'] = {**DEFAULT_RULES, **data.get('rules',{})}
+    enabled=data['rules'].pop('enabled_event_types',list(DEFAULT_EVENT_TYPES))
+    if not isinstance(enabled,list) or not enabled or any(not isinstance(x,str) or x not in DEFAULT_EVENT_TYPES for x in enabled) or len(set(enabled))!=len(enabled):
+        raise ValueError('enabled_event_types must contain unique current business event IDs')
     for key,value in data['rules'].items():
         if key not in DEFAULT_RULES or not isinstance(value,(int,float)) or not math.isfinite(value) or value<=0:
             raise ValueError(f'Invalid rule setting: {key}')
     if not 0<data['rules']['min_confidence']<1 or not 0<data['rules']['stationary_distance']<1:
         raise ValueError('Confidence and normalized distance must be between zero and one')
+    data['rules']['enabled_event_types']=enabled
     data.setdefault('site_id','site-01')
     if not isinstance(data['site_id'],str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,64}',data['site_id']):
         raise ValueError('Site ID must be a safe identifier')

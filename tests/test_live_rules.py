@@ -20,10 +20,22 @@ class RulesTests(unittest.TestCase):
         for i in range(20):events+=e.update([parcel(tid=i//3,x=.2)],i*.2)
         self.assertFalse(any(x['event_type']=='chute_stall' for x in events))
     def test_no_drop_uses_motion_relative_to_open_door(self):
-        e=self.engine();events=[]
+        e=RuleEngine('site','cam',REGIONS,{'enabled_event_types':['open_no_drop']});e.reset('session');events=[]
         for i in range(8):
             x=.1+i*.05;events+=e.update([parcel(x=x,y=.2),door(x)],i*.2)
         self.assertEqual(['open_no_drop'],[x['event_type'] for x in events])
+    def test_current_default_types_and_names(self):
+        from sorting_vision.event_types import DEFAULT_EVENT_TYPES,EVENT_NAMES
+        e=self.engine();events=[]
+        for i in range(8):events+=e.update([parcel(x=.2,y=.2),door(.2)],i*.2)
+        self.assertEqual([],events)
+        self.assertEqual({'wrong_chute','multi_parcel_drawer','chute_stall'},set(DEFAULT_EVENT_TYPES))
+        e=self.engine();e.update([parcel()],0);event=e.update([parcel()],1.3)[0]
+        self.assertEqual(EVENT_NAMES['chute_stall'],event['event_type_name'])
+        self.assertEqual('live-v2',event['rule_version'])
+    def test_only_selected_event_types_are_emitted(self):
+        e=RuleEngine('site','cam',REGIONS,{'enabled_event_types':['wrong_chute']})
+        e.update([parcel()],0);self.assertEqual([],e.update([parcel()],1.3))
     def test_two_tracks_debounce_and_duplicate_box(self):
         e=self.engine();a=parcel(1,.2,.2);b=parcel(2,.6,.2)
         self.assertEqual([],e.update([a,b],0));events=e.update([a,b],.3)

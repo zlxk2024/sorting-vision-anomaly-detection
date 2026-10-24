@@ -4,12 +4,15 @@ import argparse
 import csv
 import json
 import math
+import sys
 from collections import defaultdict
 from pathlib import Path
 
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT))
+from sorting_vision.event_types import DEFAULT_EVENT_TYPES, EVENT_NAMES
 VIDEO = (Path(__file__).resolve().parents[1] / "data/videos/快递分类视频.mp4")
 WEIGHTS = ROOT / "models/sorting_yolo11n_v2_mixed_best.pt"
 OUTPUT = ROOT / "runs/sorting_events_v1"
@@ -28,12 +31,6 @@ COLORS = {
     2: (255, 255, 255),
     3: (40, 80, 255),
     4: (0, 200, 255),
-}
-EVENT_NAMES = {
-    "open_no_drop": "不掉件",
-    "wrong_chute": "飘格",
-    "multi_parcel_drawer": "一车两件",
-    "chute_stall": "失速/滞留",
 }
 
 
@@ -391,7 +388,7 @@ def analyze(frames):
                 )
                 break
     events += stall_events
-    return coalesce_events(events)
+    return coalesce_events([event for event in events if event['type'] in DEFAULT_EVENT_TYPES])
 
 
 def save_outputs(frames, events):

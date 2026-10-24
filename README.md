@@ -1,6 +1,6 @@
 # 快递分拣视频异常检测
 
-输入 RGB 视频，使用 **YOLO11n V2 + ByteTrack + V1 时序规则**识别包裹、抽屉、闸口等对象，输出不掉件、飘格、一车两件、滞留的视觉异常候选。
+输入 RGB 视频，使用 **YOLO11n V2 + ByteTrack + 时序规则**识别包裹、抽屉、闸口等对象，当前默认输出三类视觉异常候选：**落格错误（原称飘格）、一车两件/多件混放、格口包裹滞留**。模型实体类别不变，业务异常由规则判断。
 
 本仓库提供离线视频分析、摄像头实时检测、异常候选入库和 HTTP 查询接口，包含 V2 `.pt`、`.onnx` 模型。当前为 PoC 版本；实体检测指标不能代替异常事件验收，Horus 相机接入仍是工程骨架。
 
@@ -125,7 +125,7 @@ print(result['events'])
 
 固定类别顺序：`0 parcel`、`1 drawer_open`、`2 drawer_closed`、`3 chute`、`4 bag`。V2 历史测试 mAP@0.5 为 0.894；新场景包裹 Precision 0.574、关闭抽屉 Recall 0.480，仍需优化。
 
-离线入口先完成视频推理，再统一分析异常；新增实时入口持续读取 RTSP，使用按秒和归一化坐标的增量规则，经本地 outbox 写入数据库。当前已验证一路，多路吞吐和完整班次稳定性需在目标工控机验收。缺少 PLC/WCS 目标格口时，飘格仅是视觉候选。完整限制见 [KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md)。
+离线入口先完成视频推理，再统一分析异常；新增实时入口持续读取 RTSP，使用按秒和归一化坐标的增量规则，经本地 outbox 写入数据库。当前已验证一路，多路吞吐和完整班次稳定性需在目标工控机验收。缺少 PLC/WCS 目标格口时，落格错误仅是视觉候选。完整限制见 [KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md)。
 
 - [摄像头实时检测与入库验证](docs/REALTIME_VERIFICATION.md)
 - [Docker 实际部署与性能报告](docs/DOCKER_PERFORMANCE_2026-10-22.md)

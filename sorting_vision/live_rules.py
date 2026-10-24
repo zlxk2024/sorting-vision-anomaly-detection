@@ -4,6 +4,7 @@ from collections import deque
 from datetime import datetime, timezone
 import math, uuid
 from .live_config import DEFAULT_RULES
+from .event_types import DEFAULT_EVENT_TYPES, EVENT_NAMES
 
 def utc_now(): return datetime.now(timezone.utc).isoformat(timespec='milliseconds')
 def center(box): return ((box[0]+box[2])/2,(box[1]+box[3])/2)
@@ -16,6 +17,7 @@ class RuleEngine:
     def __init__(self,site_id,camera_id,regions,rules=None):
         self.site_id=site_id;self.camera_id=camera_id;self.regions=regions
         self.rules={**DEFAULT_RULES,**(rules or {})};self.session='';self.last_t=None
+        self.enabled=set(self.rules.pop('enabled_event_types',DEFAULT_EVENT_TYPES))
         self.tracks={};self.conditions={}
     def reset(self,session,now=None):
         events=[]
@@ -64,6 +66,7 @@ class RuleEngine:
             if len(group)>=2:
                 d={'track_id':None,'track_ids':sorted(int(x['track_id']) for x in group), 'confidence':min(x['confidence'] for x in group)}
                 present[('multi_parcel_drawer',region['id'])]=(d,region,None,None,'multiple_independent_tracks')
+        present={key:value for key,value in present.items() if key[0] in self.enabled}
         thresholds={'open_no_drop':self.rules['open_no_drop_seconds'],'chute_stall':self.rules['stall_seconds'],
                     'multi_parcel_drawer':self.rules['multi_seconds'],'wrong_chute':self.rules['wrong_chute_seconds']}
         for key,value in present.items():
@@ -79,11 +82,11 @@ class RuleEngine:
                 tid=d.get('track_id');track=self.tracks.get(tid,{})
                 identity=f'{self.site_id}:{self.camera_id}:{self.session}:{key}:{state["since"]:.6f}'
                 event={'event_id':uuid.uuid5(uuid.NAMESPACE_URL,identity).hex,'site_id':self.site_id,'camera_id':self.camera_id,
-                       'session_id':self.session,'event_type':key[0],'status':'open','start_at':state['start_at'],'end_at':at,
+                       'session_id':self.session,'event_type':key[0],'event_type_name':EVENT_NAMES[key[0]],'status':'open','start_at':state['start_at'],'end_at':at,
                        'duration_seconds':round(t-state['since'],3),'confidence':float(d['confidence']),
                        'track_ids':d.get('track_ids',[tid]),'drawer_id':drawer['id'] if drawer else None,
                        'actual_chute_id':chute['id'] if chute else None,'expected_chute_id':track.get('expected'),
-                       'judgement_basis':basis,'review_status':'pending','model_version':'YOLO11n-V2','rule_version':'live-v1',
+                       'judgement_basis':basis,'review_status':'pending','model_version':'YOLO11n-V2','rule_version':'live-v2',
                        'evidence_status':'pending','snapshot_path':None,'clip_path':None}
                 state['event']=event;state['emitted']=t;events.append(dict(event))
             elif state['event'] is not None:

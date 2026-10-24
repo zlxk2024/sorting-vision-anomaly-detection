@@ -9,7 +9,7 @@
 | 摄像头 RTSP 地址、账号密码、码流/分辨率 | `.env` 的 `SORTING_CAMERA_1_URL` | 工控机能访问；优先固定机位、固定焦距、TCP RTSP |
 | 数据库类型、地址、端口、库名、账号、密码、TLS 要求 | `.env` 的 `SORTING_DATABASE_URL` | PostgreSQL 或 MySQL；账号具有目标表读写权限 |
 | 现场抽屉、闸口的位置 | YAML 的 `cameras[].regions` | 根据实际画面标定，示例坐标不能直接用于验收 |
-| 滞留/不掉件的时长、移动距离容差 | YAML 的 `rules` | 与业务人员看正常/异常样本后确定 |
+| 滞留/多件/落格错误的确认时长、移动距离容差 | YAML 的 `rules` | 与业务人员看正常/异常样本后确定 |
 | 抽屉应投闸口的固定关系（如有） | 抽屉 ROI 的 `expected_chute_id` | 动态目标需后续对接 PLC/WCS 任务，不能用固定配置代替 |
 | 工控机 CPU/GPU、操作系统、相机数量、验收样本 | 部署与验收记录 | 先接一路，再按现场速度评估算力和漏检 |
 
@@ -59,6 +59,8 @@ docker compose -f compose.realtime.yaml logs --tail=100
 
 默认服务启动时自动创建缺失表，不修改已有表。若 DBA 不允许运行账号建表，先由有权限的账号通过同一配置执行 `--init-db`，再将 YAML 的 `database.create_tables` 设为 `false`。已有表的结构变更需 DBA 单独迁移；`create_all` 不是迁移工具。
 
+MySQL 运行账号只有 SELECT/INSERT/UPDATE/DELETE 权限时，由 DBA 在目标业务库执行 [deploy/mysql/schema.sql](../deploy/mysql/schema.sql)，然后设置 `database.create_tables: false`。运行账号不能替 DBA 执行 `--init-db`。该 SQL 不含服务器地址、账号或密码；未对任何实际业务库自动执行。
+
 Python 部署：按 README 创建 Python 3.11 环境并 `pip install -e .`，从安全方式设置环境变量后执行：
 
 ```bash
@@ -71,12 +73,15 @@ Python 进程不会自动加载 `.env`，Compose 会通过 `env_file` 加载。�
 
 所有条件必须在连续观测中持续达到阈值，使用单调时钟的实际秒数，不把“帧数”当作秒数。默认最小置信度 0.35，移动容差是归一化画面对角坐标中的欧氏距离 0.025；需现场标定。
 
-| event_type | 条件 | 默认持续时间 |
-|---|---|---|
-| `open_no_drop` | 抽屉 ROI 中存在包裹，检测到匹配开启抽屉，包裹相对开启抽屉位置未移动 | 1 秒 |
-| `chute_stall` | 同一包裹轨迹在同一闸口 ROI 中保持静止 | 1.2 秒 |
-| `multi_parcel_drawer` | 同一抽屉 ROI 中存在至少两个去重后的包裹轨迹 | 0.25 秒 |
-| `wrong_chute` | 进入与配置目标不同的闸口；无目标时只检查同一轨迹跨闸口 | 0.15 秒 |
+当前业务统一为三类；“飘格”是“落格错误”的旧称，不另设第四类。`rules.enabled_event_types` 可从下列三种 ID 中选择，默认全部启用。“不掉件”退出默认检测类型；历史记录不删除、不改写。
+
+| event_type | event_type_name（中文业务名称） | 条件 | 默认持续时间 |
+|---|---|---|---|
+| `wrong_chute` | 落格错误 | 进入与配置目标不同的闸口；无目标时只检查同一轨迹跨闸口 | 0.15 秒 |
+| `multi_parcel_drawer` | 一车两件/多件混放 | 同一抽屉 ROI 中存在至少两个去重后的包裹轨迹 | 0.25 秒 |
+| `chute_stall` | 格口包裹滞留 | 同一包裹轨迹在同一闸口 ROI 中保持静止 | 1.2 秒 |
+
+实时输出使用 `rule_version: live-v2`，新增 `event_type_name` 到 JSON payload，英文 ID 保持兼容。离线 JSON/CSV 的 `name` 同步使用新中文名称，默认同样仅输出三类；模型的五个实体类别和权重不变。旧验证报告中的四类描述是当时的规则版本。
 
 事件先 `open`，持续时更新同一 `event_id`；条件解除 0.4 秒后 `closed`，移动立即结束静止事件。`start_at`/`end_at` 为实际异常观测的起止 UTC 时间，`duration_seconds` 为观测持续时长，`closed_at` 为确认结束/中断时间。断流、间隔超过 2 秒、会话变化、重启将旧事件标记 `interrupted`，并重置跟踪与规则，不跨断流累计时长。
 

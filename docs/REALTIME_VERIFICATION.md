@@ -49,3 +49,10 @@ PostgreSQL 16 与 SQLite 已实际测试。MySQL 使用 SQLAlchemy + PyMySQL，�
 4. 按 REALTIME.md 配置隔离 PostgreSQL 和摄像头地址；受控静止测试可将 chute ROI 设为全画面。启动 Compose 后查询 `/ready`、事件及证据；该 ROI 不用于现场部署。
 5. 依次停止/恢复 RTSP 发布、停止数据库、确认 pending 增长、强制重启服务、恢复数据库，检查队列清零、遗留事件中断且主键无重复。
 6. 现场验收另行使用校准 ROI、真实正常/异常样本以及目标工控机长时间运行。
+
+## 后续对接更新
+
+- 实际 MySQL 5.7.44 的 TCP、MySQL 登录、业务库 `SELECT 1`、自有权限与服务表存在性查询通过；未执行 DDL/DML，不上传连接地址、库名、账号或密码。
+- 运行账号已授予 SELECT/INSERT/UPDATE/DELETE，未授予 CREATE；服务表尚不存在。由 DBA 在目标库执行 `deploy/mysql/schema.sql`，再配置 `database.create_tables: false`。登录成功不等于结果入库已验证。
+- 业务确认“飘格”与“落格错误”为同一类，统一使用“落格错误”。当前默认三类为落格错误、一车两件/多件混放、格口包裹滞留，实时规则版本为 `live-v2`。离线输出同步名称与默认类型，历史报告和记录不改写。
+- 此次 35 项本地回归测试通过；模型权重未变更。MySQL 业务表写入仍待建表后联调。
